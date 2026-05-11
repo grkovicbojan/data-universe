@@ -279,7 +279,8 @@ class RedditJsonScraper(Scraper):
         keyword_mode: KeywordMode = "all",
         start_datetime: dt.datetime = None,
         end_datetime: dt.datetime = None,
-        limit: int = 100
+        limit: int = 100,
+        reddit_global_search: bool = False,
     ) -> List[DataEntity]:
         """
         Scrapes Reddit data based on specific search criteria using public JSON API.
@@ -292,6 +293,8 @@ class RedditJsonScraper(Scraper):
             start_datetime: Earliest datetime for content (UTC)
             end_datetime: Latest datetime for content (UTC)
             limit: Maximum number of items to return (max 100 per request)
+            reddit_global_search: If True (and ``usernames`` is empty), use sitewide ``/search.json``
+                with all ``keywords``; ``subreddit`` is ignored.
 
         Returns:
             List of DataEntity objects matching the criteria
@@ -304,8 +307,13 @@ class RedditJsonScraper(Scraper):
 
         bt.logging.trace(
             f"On-demand scrape with usernames={usernames}, subreddit={subreddit}, "
-            f"keywords={keywords}, keyword_mode={keyword_mode}, start={start_datetime}, end={end_datetime}"
+            f"keywords={keywords}, keyword_mode={keyword_mode}, reddit_global_search={reddit_global_search}, "
+            f"start={start_datetime}, end={end_datetime}"
         )
+
+        if reddit_global_search and not keywords:
+            bt.logging.trace("reddit_global_search requires keywords, returning empty list")
+            return []
 
         contents = []
         limit = min(limit, 100)  # Reddit API max is 100
@@ -337,24 +345,61 @@ class RedditJsonScraper(Scraper):
                         bt.logging.warning(f"Failed to scrape user '{username}': {e}")
                         continue
 
-            # Case 2: Search by subreddit (with optional keywords)
-            else:
-                subreddit_name = subreddit.removeprefix("r/") if subreddit.startswith('r/') else subreddit
+            # Case 2: Sitewide search (no subreddit); same query shape as subreddit search but /search.json
+            elif reddit_global_search:
+                if keyword_mode == "all":
+                    search_query = ' AND '.join(f'"{keyword}"' for keyword in keywords)
+                else:
+                    search_query = ' OR '.join(f'"{keyword}"' for keyword in keywords)
+                q_enc = quote(search_query, safe="")
+                url = (
+                    f"{self.BASE_URL}/search.json?q={q_enc}&restrict_sr=0&limit={limit}"
+                    f"&sort=new&raw_json=1"
+                )
+                bt.logging.debug(f"Reddit sitewide search: {url}")
+                posts = await self._fetch_posts(url)
 
+                for post_data in posts:
+                    kind = post_data.get("kind", "")
+                    if kind == "t3":  # Post
+                        content = self._parse_post(post_data)
+                    elif kind == "t1":  # Comment
+                        content = self._parse_comment(post_data)
+                    else:
+                        content = self._parse_post(post_data)
+
+                    if content and self._matches_criteria(
+                        content, keywords, keyword_mode, start_datetime, end_datetime
+                    ):
+                        contents.append(content)
+
+            # Case 3: Search within a subreddit (with optional keywords)
+            else:
+                subreddit_name = subreddit.removeprefix("r/") if subreddit and subreddit.startswith("r/") else subreddit
+
+                if not subreddit_name:
+                    bt.logging.warning(
+                        "Subreddit-scoped on_demand_scrape requires a subreddit; returning no posts"
+                    )
+                    posts = []
                 # If we have keywords, use Reddit's search functionality
                 # raw_json=1 returns unescaped text to match PRAW output
-                if keywords:
+                elif keywords:
                     if keyword_mode == "all":
                         search_query = ' AND '.join(f'"{keyword}"' for keyword in keywords)
                     else:  # keyword_mode == "any"
                         search_query = ' OR '.join(f'"{keyword}"' for keyword in keywords)
 
-                    url = f"{self.BASE_URL}/r/{subreddit_name}/search.json?q={search_query}&restrict_sr=1&limit={limit}&sort=new&raw_json=1"
+                    q_enc = quote(search_query, safe="")
+                    url = (
+                        f"{self.BASE_URL}/r/{subreddit_name}/search.json?q={q_enc}"
+                        f"&restrict_sr=1&limit={limit}&sort=new&raw_json=1"
+                    )
+                    posts = await self._fetch_posts(url)
                 else:
                     # No keywords, just get recent posts
                     url = f"{self.BASE_URL}/r/{subreddit_name}/new.json?limit={limit}&raw_json=1"
-
-                posts = await self._fetch_posts(url)
+                    posts = await self._fetch_posts(url)
 
                 for post_data in posts:
                     # Check if it's a post or comment based on kind

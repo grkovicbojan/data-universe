@@ -453,6 +453,7 @@ class Miner:
             usernames: typing.Optional[typing.List[str]] = []
             keywords: typing.Optional[typing.List[str]] = []
             url: typing.Optional[str] = None
+            reddit_global_search = False
 
             data_source: DataSource
             if job_request.job.platform == "x":
@@ -465,13 +466,15 @@ class Miner:
             if job_request.job.platform == "reddit":
                 data_source = DataSource.REDDIT
                 rd_job: OnDemandJobPayloadReddit = job_request.job
-                usernames = rd_job.usernames
+                usernames = rd_job.usernames or []
 
                 if rd_job.subreddit:
                     keywords = [rd_job.subreddit]
-
-                if rd_job.keywords:
-                    keywords.extend(rd_job.keywords)
+                    if rd_job.keywords:
+                        keywords.extend(rd_job.keywords)
+                elif rd_job.keywords:
+                    keywords = list(rd_job.keywords)
+                    reddit_global_search = not bool(usernames)
 
             # process
             synapse_resp = await self.loop_poll_on_demand_active_jobs(
@@ -491,6 +494,7 @@ class Miner:
                     keyword_mode=job_request.keyword_mode,
                     usernames=usernames if usernames is not None else [],
                     keywords=keywords if keywords is not None else [],
+                    reddit_global_search=reddit_global_search,
                     url=url,
                     data=[],
                 ),
@@ -755,23 +759,37 @@ class Miner:
                     synapse.data = []
                     return synapse
 
-                data = await scraper.on_demand_scrape(
-                    usernames=synapse.usernames,
-                    subreddit=synapse.keywords[0] if synapse.keywords else None,
-                    keywords=(
-                        synapse.keywords[1:] if len(synapse.keywords) > 1 else None
-                    ),
-                    keyword_mode=synapse.keyword_mode,
-                    start_datetime=start_dt,
-                    end_datetime=end_dt,
-                    limit=synapse.limit,
-                )
+                if synapse.reddit_global_search:
+                    data = await scraper.on_demand_scrape(
+                        usernames=synapse.usernames,
+                        keywords=synapse.keywords,
+                        keyword_mode=synapse.keyword_mode,
+                        start_datetime=start_dt,
+                        end_datetime=end_dt,
+                        limit=synapse.limit,
+                        reddit_global_search=True,
+                    )
+                else:
+                    data = await scraper.on_demand_scrape(
+                        usernames=synapse.usernames,
+                        subreddit=synapse.keywords[0] if synapse.keywords else None,
+                        keywords=(
+                            synapse.keywords[1:] if len(synapse.keywords) > 1 else None
+                        ),
+                        keyword_mode=synapse.keyword_mode,
+                        start_datetime=start_dt,
+                        end_datetime=end_dt,
+                        limit=synapse.limit,
+                    )
                 synapse.data = data[: synapse.limit] if synapse.limit else data
 
             synapse.version = constants.PROTOCOL_VERSION
 
+            requester = getattr(
+                getattr(synapse, "dendrite", None), "hotkey", "internal_on_demand"
+            )
             bt.logging.success(
-                f"Returning {len(synapse.data)} items to {synapse.dendrite.hotkey}"
+                f"Returning {len(synapse.data)} items to {requester}"
             )
 
         except Exception as e:

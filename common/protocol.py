@@ -117,6 +117,15 @@ class OnDemandRequest(BaseProtocol):
         max_length=5
     )
 
+    reddit_global_search: bool = Field(
+        default=False,
+        description=(
+            "Reddit only: if True, use site-wide /search.json with all keywords in `keywords`. "
+            "If False (default), legacy behavior: first keyword is the subreddit slug and the "
+            "rest are in-subreddit search terms."
+        ),
+    )
+
     url: Optional[str] = Field(
         default=None,
         description="Single URL for URL search mode (X or YouTube)"
