@@ -368,8 +368,9 @@ class RedditJsonScraper(Scraper):
                     else:
                         content = self._parse_post(post_data)
 
+                    # Reddit already applied `q=`; substring keyword checks often drop valid hits.
                     if content and self._matches_criteria(
-                        content, keywords, keyword_mode, start_datetime, end_datetime
+                        content, None, keyword_mode, start_datetime, end_datetime
                     ):
                         contents.append(content)
 
@@ -382,6 +383,7 @@ class RedditJsonScraper(Scraper):
                         "Subreddit-scoped on_demand_scrape requires a subreddit; returning no posts"
                     )
                     posts = []
+                    posts_from_reddit_search = False
                 # If we have keywords, use Reddit's search functionality
                 # raw_json=1 returns unescaped text to match PRAW output
                 elif keywords:
@@ -396,10 +398,12 @@ class RedditJsonScraper(Scraper):
                         f"&restrict_sr=1&limit={limit}&sort=new&raw_json=1"
                     )
                     posts = await self._fetch_posts(url)
+                    posts_from_reddit_search = True
                 else:
                     # No keywords, just get recent posts
                     url = f"{self.BASE_URL}/r/{subreddit_name}/new.json?limit={limit}&raw_json=1"
                     posts = await self._fetch_posts(url)
+                    posts_from_reddit_search = False
 
                 for post_data in posts:
                     # Check if it's a post or comment based on kind
@@ -411,7 +415,10 @@ class RedditJsonScraper(Scraper):
                     else:
                         content = self._parse_post(post_data)  # Default to post parsing
 
-                    if content and self._matches_criteria(content, keywords, keyword_mode, start_datetime, end_datetime):
+                    match_keywords = None if posts_from_reddit_search else keywords
+                    if content and self._matches_criteria(
+                        content, match_keywords, keyword_mode, start_datetime, end_datetime
+                    ):
                         contents.append(content)
 
         except Exception as e:
