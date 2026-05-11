@@ -1,9 +1,16 @@
 import asyncio
 import aiohttp
+import json
+import os
+import threading
 import traceback
 import datetime as dt
+from contextlib import asynccontextmanager
+from typing import Any, Dict, List, Optional
+from urllib.parse import quote
+
 import bittensor as bt
-from typing import List, Optional
+from aiohttp_socks import ProxyConnector
 from common.data import DataEntity, DataLabel, DataSource
 from common.date_range import DateRange
 from scraping.scraper import ScrapeConfig, Scraper, ValidationResult
@@ -16,6 +23,61 @@ from scraping.reddit.utils import (
     extract_media_urls,
 )
 from common.protocol import KeywordMode
+
+
+def _format_host_for_proxy(host: str) -> str:
+    """Bracket IPv6 literals so they parse correctly in proxy URLs."""
+    h = host.strip()
+    if ":" in h and not (h.startswith("[") and h.endswith("]")):
+        return f"[{h}]"
+    return h
+
+
+def _socks5_url(host: str, port: int, username: str, password: str) -> str:
+    """Build a socks5:// URL for aiohttp-socks (credentials URL-encoded)."""
+    h = _format_host_for_proxy(host)
+    user = quote(username, safe="")
+    pwd = quote(password, safe="")
+    if user or pwd:
+        return f"socks5://{user}:{pwd}@{h}:{port}"
+    return f"socks5://{h}:{port}"
+
+
+def _load_socks5_specs_from_env() -> Optional[List[dict]]:
+    raw = os.getenv("REDDIT_JSON_SOCKS5_PROXIES", "").strip()
+    if not raw:
+        return None
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError as e:
+        bt.logging.warning(f"Invalid REDDIT_JSON_SOCKS5_PROXIES JSON: {e}")
+        return None
+    if not isinstance(data, list):
+        bt.logging.warning("REDDIT_JSON_SOCKS5_PROXIES must be a JSON array; ignoring.")
+        return None
+    return data
+
+
+def _proxy_routes_from_specs(specs: Optional[List[dict]]) -> List[Optional[str]]:
+    """
+    Build rotation list: direct (None) first, then up to four SOCKS5 proxy URLs.
+    None means use the machine's default egress (no proxy).
+    """
+    routes: List[Optional[str]] = [None]
+    if not specs:
+        return routes
+    for i, spec in enumerate(specs[:4]):
+        try:
+            host = str(spec["host"]).strip()
+            port = int(spec["port"])
+            username = str(spec.get("username") or "")
+            password = str(spec.get("password") or "")
+            if not host:
+                raise ValueError("missing host")
+            routes.append(_socks5_url(host, port, username, password))
+        except (KeyError, TypeError, ValueError) as e:
+            bt.logging.warning(f"Skipping invalid SOCKS5 proxy entry #{i + 1}: {e}")
+    return routes
 
 
 class RedditJsonScraper(Scraper):
@@ -32,6 +94,43 @@ class RedditJsonScraper(Scraper):
     MAX_RETRIES = 3
     RETRY_DELAY = 2  # seconds
 
+    def __init__(self, socks5_proxies: Optional[List[Dict[str, Any]]] = None):
+        """
+        Args:
+            socks5_proxies: Up to four dicts with keys host, port, and optional username, password.
+                If None, reads JSON from env REDDIT_JSON_SOCKS5_PROXIES (same shape).
+                Outbound traffic rotates: direct IP, then each SOCKS5, in round-robin order.
+        """
+        specs = socks5_proxies if socks5_proxies is not None else _load_socks5_specs_from_env()
+        self._proxy_routes = _proxy_routes_from_specs(specs)
+        self._proxy_rr_lock = threading.Lock()
+        self._proxy_rr_index = 0
+        if len(self._proxy_routes) > 1:
+            bt.logging.info(
+                f"RedditJsonScraper: round-robin across {len(self._proxy_routes)} routes "
+                f"(direct + {len(self._proxy_routes) - 1} SOCKS5)."
+            )
+
+    def _next_proxy_url(self) -> Optional[str]:
+        with self._proxy_rr_lock:
+            route = self._proxy_routes[self._proxy_rr_index % len(self._proxy_routes)]
+            self._proxy_rr_index += 1
+            return route
+
+    @asynccontextmanager
+    async def _client_session(self):
+        route = self._next_proxy_url()
+        connector = (
+            aiohttp.TCPConnector()
+            if route is None
+            else ProxyConnector.from_url(route)
+        )
+        async with aiohttp.ClientSession(
+            connector=connector,
+            headers={"User-Agent": self.USER_AGENT},
+        ) as session:
+            yield session
+
     async def validate(self, entities: List[DataEntity]) -> List[ValidationResult]:
         """
         Validate a list of DataEntity objects using Reddit's public JSON API.
@@ -41,64 +140,72 @@ class RedditJsonScraper(Scraper):
 
         results: List[ValidationResult] = []
 
-        async with aiohttp.ClientSession(headers={"User-Agent": self.USER_AGENT}) as session:
-            for entity in entities:
-                # 1) Basic URI sanity check
-                if not is_valid_reddit_url(entity.uri):
-                    results.append(
-                        ValidationResult(
-                            is_valid=False,
-                            reason="Invalid URI.",
-                            content_size_bytes_validated=entity.content_size_bytes,
-                        )
+        for entity in entities:
+            # 1) Basic URI sanity check
+            if not is_valid_reddit_url(entity.uri):
+                results.append(
+                    ValidationResult(
+                        is_valid=False,
+                        reason="Invalid URI.",
+                        content_size_bytes_validated=entity.content_size_bytes,
                     )
-                    continue
-
-                # 2) Decode RedditContent blob
-                try:
-                    ent_content = RedditContent.from_data_entity(entity)
-                except Exception:
-                    results.append(
-                        ValidationResult(
-                            is_valid=False,
-                            reason="Failed to decode data entity.",
-                            content_size_bytes_validated=entity.content_size_bytes,
-                        )
-                    )
-                    continue
-
-                # 3) Fetch live data from Reddit's JSON API
-                try:
-                    live_content = await self._fetch_content_from_url(session, ent_content.url, ent_content.data_type)
-                except Exception as e:
-                    bt.logging.error(f"Failed to retrieve content for {entity.uri}: {e}")
-                    results.append(
-                        ValidationResult(
-                            is_valid=False,
-                            reason="Failed to retrieve submission/comment from Reddit.",
-                            content_size_bytes_validated=entity.content_size_bytes,
-                        )
-                    )
-                    continue
-
-                # 4) Live content object exists?
-                if not live_content:
-                    results.append(
-                        ValidationResult(
-                            is_valid=False,
-                            reason="Reddit content not found or invalid.",
-                            content_size_bytes_validated=entity.content_size_bytes,
-                        )
-                    )
-                    continue
-
-                # 5) Field-by-field validation
-                validation_result = validate_reddit_content(
-                    actual_content=live_content,
-                    entity_to_validate=entity,
                 )
+                continue
 
-                results.append(validation_result)
+            # 2) Decode RedditContent blob
+            try:
+                ent_content = RedditContent.from_data_entity(entity)
+            except Exception:
+                results.append(
+                    ValidationResult(
+                        is_valid=False,
+                        reason="Failed to decode data entity.",
+                        content_size_bytes_validated=entity.content_size_bytes,
+                    )
+                )
+                continue
+
+            # 3) Fetch live data from Reddit's JSON API
+            try:
+                # For comments, we pass the expected comment id so we can
+                # locate the exact node in the JSON tree instead of taking
+                # the first child only.
+                live_content = await self._fetch_content_from_url(
+                    ent_content.url,
+                    ent_content.data_type,
+                    expected_comment_id=ent_content.id
+                    if ent_content.data_type == RedditDataType.COMMENT
+                    else None,
+                )
+            except Exception as e:
+                bt.logging.error(f"Failed to retrieve content for {entity.uri}: {e}")
+                results.append(
+                    ValidationResult(
+                        is_valid=False,
+                        reason="Failed to retrieve submission/comment from Reddit.",
+                        content_size_bytes_validated=entity.content_size_bytes,
+                    )
+                )
+                continue
+
+            # 4) Live content object exists?
+            if not live_content:
+                results.append(
+                    ValidationResult(
+                        is_valid=False,
+                        reason="Reddit content not found or invalid.",
+                        content_size_bytes_validated=entity.content_size_bytes,
+                    )
+                )
+                continue
+
+            # 5) Field-by-field validation
+            validation_result = validate_reddit_content(
+                actual_content=live_content,
+                entity_to_validate=entity,
+            )
+
+            results.append(validation_result)
 
         return results
 
@@ -127,17 +234,16 @@ class RedditJsonScraper(Scraper):
 
         contents = []
         try:
-            async with aiohttp.ClientSession(headers={"User-Agent": self.USER_AGENT}) as session:
-                # Fetch posts from the subreddit
-                # IMPORTANT: raw_json=1 returns unescaped text (e.g., ">" instead of "&gt;")
-                # This matches PRAW output format for consistent validation with miners
-                url = f"{self.BASE_URL}/r/{subreddit_name}/{sort}.json?limit={limit}&raw_json=1"
-                posts = await self._fetch_posts(session, url)
+            # Fetch posts from the subreddit
+            # IMPORTANT: raw_json=1 returns unescaped text (e.g., ">" instead of "&gt;")
+            # This matches PRAW output format for consistent validation with miners
+            url = f"{self.BASE_URL}/r/{subreddit_name}/{sort}.json?limit={limit}&raw_json=1"
+            posts = await self._fetch_posts(url)
 
-                for post_data in posts:
-                    content = self._parse_post(post_data)
-                    if content:
-                        contents.append(content)
+            for post_data in posts:
+                content = self._parse_post(post_data)
+                if content:
+                    contents.append(content)
 
         except Exception as e:
             bt.logging.error(
@@ -205,65 +311,63 @@ class RedditJsonScraper(Scraper):
         limit = min(limit, 100)  # Reddit API max is 100
 
         try:
-            async with aiohttp.ClientSession(headers={"User-Agent": self.USER_AGENT}) as session:
+            # Case 1: Search by usernames
+            if usernames:
+                for username in usernames:
+                    try:
+                        # Get user's posts
+                        # raw_json=1 returns unescaped text to match PRAW output
+                        posts_url = f"{self.BASE_URL}/user/{username}/submitted.json?limit={limit}&raw_json=1"
+                        posts = await self._fetch_posts(posts_url)
 
-                # Case 1: Search by usernames
-                if usernames:
-                    for username in usernames:
-                        try:
-                            # Get user's posts
-                            # raw_json=1 returns unescaped text to match PRAW output
-                            posts_url = f"{self.BASE_URL}/user/{username}/submitted.json?limit={limit}&raw_json=1"
-                            posts = await self._fetch_posts(session, posts_url)
-
-                            for post_data in posts:
-                                content = self._parse_post(post_data)
-                                if content and self._matches_criteria(content, keywords, keyword_mode, start_datetime, end_datetime):
-                                    contents.append(content)
-
-                            # Get user's comments
-                            comments_url = f"{self.BASE_URL}/user/{username}/comments.json?limit={limit}&raw_json=1"
-                            comments = await self._fetch_posts(session, comments_url)
-
-                            for comment_data in comments:
-                                content = self._parse_comment(comment_data)
-                                if content and self._matches_criteria(content, keywords, keyword_mode, start_datetime, end_datetime):
-                                    contents.append(content)
-                        except Exception as e:
-                            bt.logging.warning(f"Failed to scrape user '{username}': {e}")
-                            continue
-
-                # Case 2: Search by subreddit (with optional keywords)
-                else:
-                    subreddit_name = subreddit.removeprefix("r/") if subreddit.startswith('r/') else subreddit
-
-                    # If we have keywords, use Reddit's search functionality
-                    # raw_json=1 returns unescaped text to match PRAW output
-                    if keywords:
-                        if keyword_mode == "all":
-                            search_query = ' AND '.join(f'"{keyword}"' for keyword in keywords)
-                        else:  # keyword_mode == "any"
-                            search_query = ' OR '.join(f'"{keyword}"' for keyword in keywords)
-
-                        url = f"{self.BASE_URL}/r/{subreddit_name}/search.json?q={search_query}&restrict_sr=1&limit={limit}&sort=new&raw_json=1"
-                    else:
-                        # No keywords, just get recent posts
-                        url = f"{self.BASE_URL}/r/{subreddit_name}/new.json?limit={limit}&raw_json=1"
-
-                    posts = await self._fetch_posts(session, url)
-
-                    for post_data in posts:
-                        # Check if it's a post or comment based on kind
-                        kind = post_data.get("kind", "")
-                        if kind == "t3":  # Post
+                        for post_data in posts:
                             content = self._parse_post(post_data)
-                        elif kind == "t1":  # Comment
-                            content = self._parse_comment(post_data)
-                        else:
-                            content = self._parse_post(post_data)  # Default to post parsing
+                            if content and self._matches_criteria(content, keywords, keyword_mode, start_datetime, end_datetime):
+                                contents.append(content)
 
-                        if content and self._matches_criteria(content, keywords, keyword_mode, start_datetime, end_datetime):
-                            contents.append(content)
+                        # Get user's comments
+                        comments_url = f"{self.BASE_URL}/user/{username}/comments.json?limit={limit}&raw_json=1"
+                        comments = await self._fetch_posts(comments_url)
+
+                        for comment_data in comments:
+                            content = self._parse_comment(comment_data)
+                            if content and self._matches_criteria(content, keywords, keyword_mode, start_datetime, end_datetime):
+                                contents.append(content)
+                    except Exception as e:
+                        bt.logging.warning(f"Failed to scrape user '{username}': {e}")
+                        continue
+
+            # Case 2: Search by subreddit (with optional keywords)
+            else:
+                subreddit_name = subreddit.removeprefix("r/") if subreddit.startswith('r/') else subreddit
+
+                # If we have keywords, use Reddit's search functionality
+                # raw_json=1 returns unescaped text to match PRAW output
+                if keywords:
+                    if keyword_mode == "all":
+                        search_query = ' AND '.join(f'"{keyword}"' for keyword in keywords)
+                    else:  # keyword_mode == "any"
+                        search_query = ' OR '.join(f'"{keyword}"' for keyword in keywords)
+
+                    url = f"{self.BASE_URL}/r/{subreddit_name}/search.json?q={search_query}&restrict_sr=1&limit={limit}&sort=new&raw_json=1"
+                else:
+                    # No keywords, just get recent posts
+                    url = f"{self.BASE_URL}/r/{subreddit_name}/new.json?limit={limit}&raw_json=1"
+
+                posts = await self._fetch_posts(url)
+
+                for post_data in posts:
+                    # Check if it's a post or comment based on kind
+                    kind = post_data.get("kind", "")
+                    if kind == "t3":  # Post
+                        content = self._parse_post(post_data)
+                    elif kind == "t1":  # Comment
+                        content = self._parse_comment(post_data)
+                    else:
+                        content = self._parse_post(post_data)  # Default to post parsing
+
+                    if content and self._matches_criteria(content, keywords, keyword_mode, start_datetime, end_datetime):
+                        contents.append(content)
 
         except Exception as e:
             bt.logging.error(f"Failed to perform on-demand scrape: {e}")
@@ -290,7 +394,7 @@ class RedditJsonScraper(Scraper):
 
         return data_entities
 
-    async def _fetch_posts(self, session: aiohttp.ClientSession, url: str) -> List[dict]:
+    async def _fetch_posts(self, url: str) -> List[dict]:
         """
         Fetch posts from Reddit's JSON API with retry logic.
 
@@ -299,36 +403,43 @@ class RedditJsonScraper(Scraper):
         """
         for attempt in range(self.MAX_RETRIES):
             try:
-                async with session.get(url, timeout=self.REQUEST_TIMEOUT) as response:
-                    if response.status == 429:
-                        # Rate limited, wait and retry
-                        retry_after = int(response.headers.get("Retry-After", self.RETRY_DELAY))
-                        bt.logging.warning(f"Rate limited, waiting {retry_after}s before retry...")
-                        await asyncio.sleep(retry_after)
-                        continue
-
-                    if response.status != 200:
-                        bt.logging.warning(f"Got status {response.status} from {url}")
-                        if attempt < self.MAX_RETRIES - 1:
-                            await asyncio.sleep(self.RETRY_DELAY)
+                async with self._client_session() as session:
+                    async with session.get(url, timeout=self.REQUEST_TIMEOUT) as response:
+                        if response.status == 429:
+                            # Rate limited, wait and retry (next attempt uses next rotated route)
+                            retry_after = int(
+                                response.headers.get("Retry-After", self.RETRY_DELAY)
+                            )
+                            bt.logging.warning(
+                                f"Rate limited, waiting {retry_after}s before retry..."
+                            )
+                            await asyncio.sleep(retry_after)
                             continue
+
+                        if response.status != 200:
+                            bt.logging.warning(f"Got status {response.status} from {url}")
+                            if attempt < self.MAX_RETRIES - 1:
+                                await asyncio.sleep(self.RETRY_DELAY)
+                                continue
+                            return []
+
+                        data = await response.json()
+
+                        # Reddit JSON API returns data in "data" -> "children" structure
+                        if isinstance(data, dict) and "data" in data:
+                            children = data["data"].get("children", [])
+                            return children
+                        elif isinstance(data, list) and len(data) > 0:
+                            # Sometimes Reddit returns a list (e.g., for comments)
+                            if "data" in data[0]:
+                                return data[0]["data"].get("children", [])
+
                         return []
 
-                    data = await response.json()
-
-                    # Reddit JSON API returns data in "data" -> "children" structure
-                    if isinstance(data, dict) and "data" in data:
-                        children = data["data"].get("children", [])
-                        return children
-                    elif isinstance(data, list) and len(data) > 0:
-                        # Sometimes Reddit returns a list (e.g., for comments)
-                        if "data" in data[0]:
-                            return data[0]["data"].get("children", [])
-
-                    return []
-
             except asyncio.TimeoutError:
-                bt.logging.warning(f"Timeout fetching {url}, attempt {attempt + 1}/{self.MAX_RETRIES}")
+                bt.logging.warning(
+                    f"Timeout fetching {url}, attempt {attempt + 1}/{self.MAX_RETRIES}"
+                )
                 if attempt < self.MAX_RETRIES - 1:
                     await asyncio.sleep(self.RETRY_DELAY)
                     continue
@@ -342,9 +453,9 @@ class RedditJsonScraper(Scraper):
 
     async def _fetch_content_from_url(
         self,
-        session: aiohttp.ClientSession,
         url: str,
-        data_type: RedditDataType
+        data_type: RedditDataType,
+        expected_comment_id: Optional[str] = None,
     ) -> Optional[RedditContent]:
         """
         Fetch and parse a specific post or comment from its URL.
@@ -362,29 +473,85 @@ class RedditJsonScraper(Scraper):
         json_url = f"{clean_url}.json?raw_json=1"
 
         try:
-            async with session.get(json_url, timeout=self.REQUEST_TIMEOUT) as response:
-                if response.status != 200:
-                    return None
+            async with self._client_session() as session:
+                async with session.get(json_url, timeout=self.REQUEST_TIMEOUT) as response:
+                    if response.status != 200:
+                        return None
 
-                data = await response.json()
+                    data = await response.json()
 
-                if data_type == RedditDataType.POST:
-                    # For posts, data is a list where [0] contains the post
-                    if isinstance(data, list) and len(data) > 0:
-                        children = data[0].get("data", {}).get("children", [])
-                        if children:
-                            return self._parse_post(children[0])
-                elif data_type == RedditDataType.COMMENT:
-                    # For comments, we need to navigate to find the specific comment
-                    # data[0] contains the parent post, data[1] contains comments
-                    if isinstance(data, list) and len(data) > 1:
-                        # Get parent post's NSFW status (comments inherit from parent)
-                        parent_post_data = data[0].get("data", {}).get("children", [{}])[0].get("data", {})
-                        parent_nsfw = parent_post_data.get("over_18", False)
+                    if data_type == RedditDataType.POST:
+                        # For posts, data is a list where [0] contains the post
+                        if isinstance(data, list) and len(data) > 0:
+                            children = data[0].get("data", {}).get("children", [])
+                            if children:
+                                return self._parse_post(children[0])
+                    elif data_type == RedditDataType.COMMENT:
+                        # For comments, we navigate the full comment tree to find
+                        # the node matching the expected comment id, rather than
+                        # assuming it is the first child.
+                        if isinstance(data, list) and len(data) > 1:
+                            # Get parent post's NSFW status (comments inherit from parent)
+                            parent_post_data = (
+                                data[0]
+                                .get("data", {})
+                                .get("children", [{}])[0]
+                                .get("data", {})
+                            )
+                            parent_nsfw = parent_post_data.get("over_18", False)
 
-                        children = data[1].get("data", {}).get("children", [])
-                        if children:
-                            return self._parse_comment(children[0], parent_nsfw=parent_nsfw)
+                            def _walk_comments(
+                                nodes: List[dict],
+                            ) -> Optional[RedditContent]:
+                                for node in nodes:
+                                    if not isinstance(node, dict):
+                                        continue
+                                    kind = node.get("kind")
+                                    node_data = node.get("data", {}) or {}
+                                    name = node_data.get("name") or node_data.get("id")
+
+                                    # Match against the full name (e.g. "t1_xxx") or bare id.
+                                    if expected_comment_id and name:
+                                        if (
+                                            name == expected_comment_id
+                                            or name.split("_")[-1]
+                                            == expected_comment_id.split("_")[-1]
+                                        ):
+                                            return self._parse_comment(
+                                                node, parent_nsfw=parent_nsfw
+                                            )
+
+                                    # Recurse into replies if present.
+                                    replies = node_data.get("replies")
+                                    if (
+                                        isinstance(replies, dict)
+                                        and "data" in replies
+                                    ):
+                                        reply_children = (
+                                            replies.get("data", {})
+                                            .get("children", [])
+                                        )
+                                        found = _walk_comments(reply_children)
+                                        if found is not None:
+                                            return found
+                                return None
+
+                            children = (
+                                data[1]
+                                .get("data", {})
+                                .get("children", [])
+                            )
+                            # If we have an expected id, search the tree; otherwise,
+                            # fall back to the first child as before.
+                            if children:
+                                if expected_comment_id:
+                                    found = _walk_comments(children)
+                                    if found is not None:
+                                        return found
+                                # Fallback: preserve previous behaviour.
+                                return self._parse_comment(
+                                    children[0], parent_nsfw=parent_nsfw
+                                )
 
         except Exception as e:
             bt.logging.error(f"Error fetching content from {url}: {e}")

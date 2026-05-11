@@ -26,3 +26,4 @@ langcodes==3.5.0
 prometheus-fastapi-instrumentator==7.1.0
 prometheus_client==0.22.1
 substrate-interface==1.7.11
+aiohttp-socks==0.9.1
