@@ -390,10 +390,16 @@ class Miner:
 
                 if len(jobs_to_process) > 0:
                     bt.logging.info(
-                        f"Adding {len(active_jobs_response.jobs)} to on demand scrape queue"
+                        f"Adding {len(jobs_to_process)} job(s) to on demand scrape queue"
                     )
 
                 for job in jobs_to_process:
+                    job_full = job.model_dump(mode="json")
+                    bt.logging.info(
+                        "On-demand job full structure (from list API, id=%s):\n%s",
+                        job.id,
+                        json.dumps(job_full, indent=2, ensure_ascii=False),
+                    )
                     await self.on_demand_job_queue.put(job)
 
                     self.processed_job_ids_cache.add(job.id)
@@ -440,7 +446,7 @@ class Miner:
     async def scrape_on_demand_job(self, job_request: OnDemandJob):
         try:
             bt.logging.info(
-                f"Starting on demand scrape for job with id {job_request.id}:\n\n {job_request}"
+                f"Starting on demand scrape for job id={job_request.id}"
             )
 
             # map job request to existing synapse on demand
