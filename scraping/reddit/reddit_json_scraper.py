@@ -699,6 +699,20 @@ class RedditJsonScraper(Scraper):
             bt.logging.trace(f"Failed to parse comment: {e}")
             return None
 
+    @staticmethod
+    def _normalize_inclusive_end_datetime(end: dt.datetime) -> dt.datetime:
+        """Treat API end_date at UTC midnight as inclusive end of that calendar day."""
+        if end.tzinfo is None:
+            end = end.replace(tzinfo=dt.timezone.utc)
+        if (
+            end.hour == 0
+            and end.minute == 0
+            and end.second == 0
+            and end.microsecond == 0
+        ):
+            return end.replace(hour=23, minute=59, second=59, microsecond=999999)
+        return end
+
     def _matches_criteria(
         self,
         content: RedditContent,
@@ -719,16 +733,26 @@ class RedditJsonScraper(Scraper):
         if end_datetime:
             if end_datetime.tzinfo is None:
                 end_datetime = end_datetime.replace(tzinfo=dt.timezone.utc)
+            end_datetime = self._normalize_inclusive_end_datetime(end_datetime)
             if content.created_at > end_datetime:
                 return False
 
-        # Check keywords based on keyword_mode
+        # Check keywords based on keyword_mode (match across common surfaced fields)
         if keywords:
-            searchable_text = ""
+            parts = []
             if content.title:
-                searchable_text += content.title.lower() + " "
+                parts.append(content.title.lower())
             if content.body:
-                searchable_text += content.body.lower()
+                parts.append(content.body.lower())
+            if content.url:
+                parts.append(content.url.lower())
+            if content.id:
+                parts.append(content.id.lower())
+            if content.username:
+                parts.append(content.username.lower())
+            if content.community:
+                parts.append(content.community.lower())
+            searchable_text = " ".join(parts)
 
             if keyword_mode == "all":
                 if not all(keyword.lower() in searchable_text for keyword in keywords):

@@ -704,8 +704,8 @@ class Miner:
         Handle on-demand data requests from validators.
         Uses enhanced scraper for X data while maintaining protocol compatibility.
         """
-        if hasattr(synapse, "dendrite") and hasattr(synapse.dendrite, "hotkey"):
-            bt.logging.info(f"Got on-demand request from {synapse.dendrite.hotkey}")
+        requester = getattr(getattr(synapse, "dendrite", None), "hotkey", None) or "internal_on_demand"
+        bt.logging.info(f"Got on-demand request from {requester}")
 
         try:
             # Create date range with utility function
