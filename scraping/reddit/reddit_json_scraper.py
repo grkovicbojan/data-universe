@@ -6,7 +6,7 @@ import threading
 import traceback
 import datetime as dt
 from contextlib import asynccontextmanager
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Set, Tuple
 from urllib.parse import quote
 
 import bittensor as bt
@@ -88,6 +88,11 @@ class RedditJsonScraper(Scraper):
 
     USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)"
     BASE_URL = "https://www.reddit.com"
+
+    # On-demand: Reddit returns at most 100 items per listing page; on-demand jobs allow up to 1000 entities.
+    REDDIT_LISTING_MAX_PER_PAGE = 100
+    ON_DEMAND_MAX_ENTITIES = 1000
+    ON_DEMAND_MAX_PAGES = 150  # safety cap for pagination loops
 
     # Rate limiting settings
     REQUEST_TIMEOUT = 10  # seconds
@@ -285,24 +290,33 @@ class RedditJsonScraper(Scraper):
         """
         Scrapes Reddit data based on specific search criteria using public JSON API.
 
+        Reddit returns at most ``REDDIT_LISTING_MAX_PER_PAGE`` children per HTTP response.
+        This method follows Listing ``after`` tokens until ``limit`` matching items are
+        collected or the listing ends.
+
         Args:
-            usernames: List of target usernames - content from any of these users will be included (OR logic)
-            subreddit: Target specific subreddit (without r/ prefix)
-            keywords: List of keywords to search for
-            keyword_mode: "any" (OR logic) or "all" (AND logic) for keyword matching
-            start_datetime: Earliest datetime for content (UTC)
-            end_datetime: Latest datetime for content (UTC)
-            limit: Maximum number of items to return (max 100 per request)
-            reddit_global_search: If True (and ``usernames`` is empty), use sitewide ``/search.json``
-                with all ``keywords``; ``subreddit`` is ignored.
+            usernames: If non-empty, gather posts and comments for these authors (OR across names).
+            subreddit: Target subreddit without ``r/`` when not using global search.
+            keywords: Optional substring filters (also passed through Reddit ``q=`` when searching).
+            keyword_mode: ``any`` or ``all`` for miner-side keyword matching.
+            start_datetime / end_datetime: UTC bounds applied in ``_matches_criteria``.
+            limit: Target number of entities (capped at ``ON_DEMAND_MAX_ENTITIES``).
+            reddit_global_search: Sitewide ``/search.json`` (requires keywords).
 
         Returns:
-            List of DataEntity objects matching the criteria
+            Up to ``limit`` ``DataEntity`` objects.
         """
+        usernames = list(usernames or [])
+        keywords = list(keywords or [])
 
-        # Return empty list if all key search parameters are None
-        if all(param is None for param in [usernames, keywords, start_datetime, end_datetime]) and subreddit == "all":
-            bt.logging.trace("All search parameters are None, returning empty list")
+        if (
+            not usernames
+            and not keywords
+            and start_datetime is None
+            and end_datetime is None
+            and (not subreddit or subreddit == "all")
+        ):
+            bt.logging.trace("No search parameters, returning empty list")
             return []
 
         bt.logging.trace(
@@ -315,133 +329,198 @@ class RedditJsonScraper(Scraper):
             bt.logging.trace("reddit_global_search requires keywords, returning empty list")
             return []
 
-        contents = []
-        limit = min(limit, 100)  # Reddit API max is 100
+        target_limit = min(max(1, int(limit)), self.ON_DEMAND_MAX_ENTITIES)
+        page_lim = self.REDDIT_LISTING_MAX_PER_PAGE
+
+        contents: List[RedditContent] = []
+
+        seen_ids: Set[str] = set()
+
+        def try_add(
+            c: Optional[RedditContent],
+            kw_match: Optional[List[str]],
+            posts_from_reddit_search: bool,
+        ) -> None:
+            if not c or len(contents) >= target_limit:
+                return
+            dedup = c.id or c.url or ""
+            if dedup in seen_ids:
+                return
+            mkw = None if posts_from_reddit_search else kw_match
+            if not self._matches_criteria(
+                c, mkw, keyword_mode, start_datetime, end_datetime
+            ):
+                return
+            seen_ids.add(dedup)
+            contents.append(c)
 
         try:
-            # Case 1: Search by usernames
+            # Case 1: user profiles — paginate submitted + comments with ``after``
             if usernames:
                 for username in usernames:
+                    if len(contents) >= target_limit:
+                        break
                     try:
-                        # Get user's posts
-                        # raw_json=1 returns unescaped text to match PRAW output
-                        posts_url = f"{self.BASE_URL}/user/{username}/submitted.json?limit={limit}&raw_json=1"
-                        posts = await self._fetch_posts(posts_url)
-
-                        for post_data in posts:
-                            content = self._parse_post(post_data)
-                            if content and self._matches_criteria(content, keywords, keyword_mode, start_datetime, end_datetime):
-                                contents.append(content)
-
-                        # Get user's comments
-                        comments_url = f"{self.BASE_URL}/user/{username}/comments.json?limit={limit}&raw_json=1"
-                        comments = await self._fetch_posts(comments_url)
-
-                        for comment_data in comments:
-                            content = self._parse_comment(comment_data)
-                            if content and self._matches_criteria(content, keywords, keyword_mode, start_datetime, end_datetime):
-                                contents.append(content)
+                        for path_suffix in ("submitted", "comments"):
+                            if len(contents) >= target_limit:
+                                break
+                            after_cursor: Optional[str] = None
+                            pages = 0
+                            while (
+                                len(contents) < target_limit
+                                and pages < self.ON_DEMAND_MAX_PAGES
+                            ):
+                                base = (
+                                    f"{self.BASE_URL}/user/{username}/{path_suffix}.json"
+                                    f"?limit={page_lim}&raw_json=1"
+                                )
+                                url = (
+                                    f"{base}&after={quote(after_cursor, safe='')}"
+                                    if after_cursor
+                                    else base
+                                )
+                                children, after_cursor = await self._fetch_listing_page(
+                                    url
+                                )
+                                pages += 1
+                                for child in children:
+                                    if len(contents) >= target_limit:
+                                        break
+                                    c = self._listing_child_to_content(child)
+                                    try_add(c, keywords, False)
+                                if not after_cursor:
+                                    break
                     except Exception as e:
                         bt.logging.warning(f"Failed to scrape user '{username}': {e}")
                         continue
 
-            # Case 2: Sitewide search (no subreddit); same query shape as subreddit search but /search.json
+            # Case 2: sitewide search — paginate ``/search.json``
             elif reddit_global_search:
                 if keyword_mode == "all":
-                    search_query = ' AND '.join(f'"{keyword}"' for keyword in keywords)
+                    search_query = ' AND '.join(f'"{kw}"' for kw in keywords)
                 else:
-                    search_query = ' OR '.join(f'"{keyword}"' for keyword in keywords)
+                    search_query = ' OR '.join(f'"{kw}"' for kw in keywords)
                 q_enc = quote(search_query, safe="")
-                url = (
-                    f"{self.BASE_URL}/search.json?q={q_enc}&restrict_sr=0&limit={limit}"
-                    f"&sort=new&raw_json=1"
-                )
-                bt.logging.debug(f"Reddit sitewide search: {url}")
-                posts = await self._fetch_posts(url)
+                after_cursor = None
+                pages = 0
+                while (
+                    len(contents) < target_limit and pages < self.ON_DEMAND_MAX_PAGES
+                ):
+                    base = (
+                        f"{self.BASE_URL}/search.json?q={q_enc}&restrict_sr=0"
+                        f"&limit={page_lim}&sort=new&raw_json=1"
+                    )
+                    url = (
+                        f"{base}&after={quote(after_cursor, safe='')}"
+                        if after_cursor
+                        else base
+                    )
+                    bt.logging.debug(f"Reddit sitewide search: {url}")
+                    children, after_cursor = await self._fetch_listing_page(url)
+                    pages += 1
+                    for child in children:
+                        if len(contents) >= target_limit:
+                            break
+                        kind = child.get("kind", "")
+                        if kind == "t3":
+                            c = self._parse_post(child)
+                        elif kind == "t1":
+                            c = self._parse_comment(child)
+                        else:
+                            c = self._parse_post(child)
+                        try_add(c, None, True)
+                    if not after_cursor:
+                        break
 
-                for post_data in posts:
-                    kind = post_data.get("kind", "")
-                    if kind == "t3":  # Post
-                        content = self._parse_post(post_data)
-                    elif kind == "t1":  # Comment
-                        content = self._parse_comment(post_data)
-                    else:
-                        content = self._parse_post(post_data)
-
-                    # Reddit already applied `q=`; substring keyword checks often drop valid hits.
-                    if content and self._matches_criteria(
-                        content, None, keyword_mode, start_datetime, end_datetime
-                    ):
-                        contents.append(content)
-
-            # Case 3: Search within a subreddit (with optional keywords)
+            # Case 3: subreddit — ``search.json`` or ``/new.json``, paginated
             else:
-                subreddit_name = subreddit.removeprefix("r/") if subreddit and subreddit.startswith("r/") else subreddit
+                subreddit_name = (
+                    subreddit.removeprefix("r/")
+                    if subreddit and subreddit.startswith("r/")
+                    else subreddit
+                )
 
                 if not subreddit_name:
                     bt.logging.warning(
                         "Subreddit-scoped on_demand_scrape requires a subreddit; returning no posts"
                     )
-                    posts = []
-                    posts_from_reddit_search = False
-                # If we have keywords, use Reddit's search functionality
-                # raw_json=1 returns unescaped text to match PRAW output
                 elif keywords:
                     if keyword_mode == "all":
-                        search_query = ' AND '.join(f'"{keyword}"' for keyword in keywords)
-                    else:  # keyword_mode == "any"
-                        search_query = ' OR '.join(f'"{keyword}"' for keyword in keywords)
-
-                    q_enc = quote(search_query, safe="")
-                    url = (
-                        f"{self.BASE_URL}/r/{subreddit_name}/search.json?q={q_enc}"
-                        f"&restrict_sr=1&limit={limit}&sort=new&raw_json=1"
-                    )
-                    posts = await self._fetch_posts(url)
-                    posts_from_reddit_search = True
-                else:
-                    # No keywords, just get recent posts
-                    url = f"{self.BASE_URL}/r/{subreddit_name}/new.json?limit={limit}&raw_json=1"
-                    posts = await self._fetch_posts(url)
-                    posts_from_reddit_search = False
-
-                for post_data in posts:
-                    # Check if it's a post or comment based on kind
-                    kind = post_data.get("kind", "")
-                    if kind == "t3":  # Post
-                        content = self._parse_post(post_data)
-                    elif kind == "t1":  # Comment
-                        content = self._parse_comment(post_data)
+                        search_query = ' AND '.join(f'"{kw}"' for kw in keywords)
                     else:
-                        content = self._parse_post(post_data)  # Default to post parsing
-
-                    match_keywords = None if posts_from_reddit_search else keywords
-                    if content and self._matches_criteria(
-                        content, match_keywords, keyword_mode, start_datetime, end_datetime
+                        search_query = ' OR '.join(f'"{kw}"' for kw in keywords)
+                    q_enc = quote(search_query, safe="")
+                    after_cursor = None
+                    pages = 0
+                    while (
+                        len(contents) < target_limit
+                        and pages < self.ON_DEMAND_MAX_PAGES
                     ):
-                        contents.append(content)
+                        base = (
+                            f"{self.BASE_URL}/r/{subreddit_name}/search.json?q={q_enc}"
+                            f"&restrict_sr=1&limit={page_lim}&sort=new&raw_json=1"
+                        )
+                        url = (
+                            f"{base}&after={quote(after_cursor, safe='')}"
+                            if after_cursor
+                            else base
+                        )
+                        children, after_cursor = await self._fetch_listing_page(url)
+                        pages += 1
+                        for child in children:
+                            if len(contents) >= target_limit:
+                                break
+                            c = self._listing_child_to_content(child)
+                            try_add(c, keywords, True)
+                        if not after_cursor:
+                            break
+                else:
+                    after_cursor = None
+                    pages = 0
+                    while (
+                        len(contents) < target_limit
+                        and pages < self.ON_DEMAND_MAX_PAGES
+                    ):
+                        base = (
+                            f"{self.BASE_URL}/r/{subreddit_name}/new.json"
+                            f"?limit={page_lim}&raw_json=1"
+                        )
+                        url = (
+                            f"{base}&after={quote(after_cursor, safe='')}"
+                            if after_cursor
+                            else base
+                        )
+                        children, after_cursor = await self._fetch_listing_page(url)
+                        pages += 1
+                        for child in children:
+                            if len(contents) >= target_limit:
+                                break
+                            c = self._listing_child_to_content(child)
+                            try_add(c, keywords, False)
+                        if not after_cursor:
+                            break
 
         except Exception as e:
             bt.logging.error(f"Failed to perform on-demand scrape: {e}")
             bt.logging.error(traceback.format_exc())
             return []
 
-        # Filter out NSFW content with media
-        filtered_contents = []
+        filtered_contents: List[RedditContent] = []
         for content in contents:
+            if len(filtered_contents) >= target_limit:
+                break
             if content.is_nsfw and content.media:
                 bt.logging.trace(f"Skipping NSFW content with media: {content.url}")
                 continue
             filtered_contents.append(content)
 
         bt.logging.success(
-            f"On-demand scrape completed. Found {len(filtered_contents)} items "
-            f"(filtered out {len(contents) - len(filtered_contents)} NSFW+media posts)."
+            f"On-demand scrape completed. Returning {len(filtered_contents)} items "
+            f"(target_limit={target_limit}, pre-filter count={len(contents)})."
         )
 
-        # Convert to DataEntity objects
-        data_entities = []
-        for content in filtered_contents:
+        data_entities: List[DataEntity] = []
+        for content in filtered_contents[:target_limit]:
             data_entities.append(RedditContent.to_data_entity(content=content))
 
         return data_entities
@@ -502,6 +581,73 @@ class RedditJsonScraper(Scraper):
                     continue
 
         return []
+
+    async def _fetch_listing_page(self, url: str) -> Tuple[List[dict], Optional[str]]:
+        """
+        Fetch one Reddit Listing page. Returns (children, after_cursor).
+
+        ``after_cursor`` is Reddit's fullname token for the next page (e.g. t3_xxx).
+        """
+        for attempt in range(self.MAX_RETRIES):
+            try:
+                async with self._client_session() as session:
+                    async with session.get(url, timeout=self.REQUEST_TIMEOUT) as response:
+                        if response.status == 429:
+                            retry_after = int(
+                                response.headers.get("Retry-After", self.RETRY_DELAY)
+                            )
+                            bt.logging.warning(
+                                f"Rate limited, waiting {retry_after}s before retry..."
+                            )
+                            await asyncio.sleep(retry_after)
+                            continue
+
+                        if response.status != 200:
+                            bt.logging.warning(f"Got status {response.status} from {url}")
+                            if attempt < self.MAX_RETRIES - 1:
+                                await asyncio.sleep(self.RETRY_DELAY)
+                                continue
+                            return [], None
+
+                        data = await response.json()
+
+                        if isinstance(data, dict) and "data" in data:
+                            listing = data["data"]
+                            children = listing.get("children", [])
+                            after = listing.get("after")
+                            return children, after
+                        if isinstance(data, list) and len(data) > 0:
+                            if "data" in data[0]:
+                                listing = data[0]["data"]
+                                children = listing.get("children", [])
+                                after = listing.get("after")
+                                return children, after
+
+                        return [], None
+
+            except asyncio.TimeoutError:
+                bt.logging.warning(
+                    f"Timeout fetching {url}, attempt {attempt + 1}/{self.MAX_RETRIES}"
+                )
+                if attempt < self.MAX_RETRIES - 1:
+                    await asyncio.sleep(self.RETRY_DELAY)
+                    continue
+            except Exception as e:
+                bt.logging.error(f"Error fetching {url}: {e}")
+                if attempt < self.MAX_RETRIES - 1:
+                    await asyncio.sleep(self.RETRY_DELAY)
+                    continue
+
+        return [], None
+
+    def _listing_child_to_content(self, post_data: dict) -> Optional[RedditContent]:
+        """Map a Listing child ``{kind, data}`` to RedditContent."""
+        kind = post_data.get("kind", "")
+        if kind == "t3":
+            return self._parse_post(post_data)
+        if kind == "t1":
+            return self._parse_comment(post_data)
+        return self._parse_post(post_data)
 
     async def _fetch_content_from_url(
         self,

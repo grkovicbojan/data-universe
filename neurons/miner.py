@@ -427,16 +427,21 @@ class Miner:
             try:
                 # miner tune this on how fast you can process a job
                 process_on_demand_minimum_duration = dt.timedelta(seconds=5)
-                has_enough_time_to_process = (
-                    dt.datetime.now(dt.timezone.utc)
-                    + process_on_demand_minimum_duration
-                    >= job_request.expire_at
-                )
-                if has_enough_time_to_process:
-                    bt.logging.warning(
-                        f"Not enough time to process job that expires at {job_request.expire_at}"
-                    )
-                    continue
+                now_utc = dt.datetime.now(dt.timezone.utc)
+                expire_at = job_request.expire_at
+                if expire_at is not None and expire_at.tzinfo is None:
+                    expire_at = expire_at.replace(tzinfo=dt.timezone.utc)
+                if expire_at is not None:
+                    if now_utc >= expire_at:
+                        bt.logging.warning(
+                            f"Skipping job {job_request.id}: already past expire_at {expire_at}"
+                        )
+                        continue
+                    if now_utc + process_on_demand_minimum_duration >= expire_at:
+                        bt.logging.warning(
+                            f"Not enough time before expire_at {expire_at}; skipping job {job_request.id}"
+                        )
+                        continue
 
                 task = self.scrape_on_demand_job(job_request=job_request)
                 asyncio.create_task(task)
@@ -451,6 +456,16 @@ class Miner:
             bt.logging.info(
                 f"Starting on demand scrape for job id={job_request.id}"
             )
+
+            now_utc = dt.datetime.now(dt.timezone.utc)
+            exp = job_request.expire_at
+            if exp is not None and exp.tzinfo is None:
+                exp = exp.replace(tzinfo=dt.timezone.utc)
+            if exp is not None and now_utc >= exp:
+                bt.logging.warning(
+                    f"Job {job_request.id} expired at {exp}; aborting scrape"
+                )
+                return
 
             # map job request to existing synapse on demand
             usernames: typing.Optional[typing.List[str]] = []
