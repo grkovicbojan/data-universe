@@ -63,6 +63,9 @@ import json
 
 from vali_utils.on_demand.output_models import create_organic_output_dict
 
+# Matches ``OnDemandRequest.limit`` upper bound in ``common/protocol.py`` (do not change protocol here).
+_ON_DEMAND_LIMIT_MAX = 1000
+
 # Enable logging to the miner TODO move it to some different location
 bt.logging.set_info(True)
 bt.logging.set_debug(True)
@@ -477,10 +480,15 @@ class Miner:
                     reddit_global_search = not bool(usernames)
 
             # process
+            # Protocol synapse must match validator-facing ``OnDemandRequest`` only (no extra fields).
+            effective_limit = min(
+                getattr(job_request, "limit", _ON_DEMAND_LIMIT_MAX) or _ON_DEMAND_LIMIT_MAX,
+                _ON_DEMAND_LIMIT_MAX,
+            )
             synapse_resp = await self.loop_poll_on_demand_active_jobs(
                 synapse=OnDemandRequest(
                     source=data_source,
-                    limit=job_request.limit,
+                    limit=effective_limit,
                     start_date=(
                         job_request.start_date.isoformat()
                         if job_request.start_date
@@ -494,11 +502,11 @@ class Miner:
                     keyword_mode=job_request.keyword_mode,
                     usernames=usernames if usernames is not None else [],
                     keywords=keywords if keywords is not None else [],
-                    reddit_global_search=reddit_global_search,
                     url=url,
                     data=[],
                 ),
                 reraise_instead_of_return_empty=True,
+                reddit_global_search=reddit_global_search,
             )
 
             data = synapse_resp.data
@@ -698,7 +706,10 @@ class Miner:
         return self.default_priority(synapse)
 
     async def loop_poll_on_demand_active_jobs(
-        self, synapse: OnDemandRequest, reraise_instead_of_return_empty: bool = False
+        self,
+        synapse: OnDemandRequest,
+        reraise_instead_of_return_empty: bool = False,
+        reddit_global_search: bool = False,
     ) -> OnDemandRequest:
         """
         Handle on-demand data requests from validators.
@@ -759,7 +770,11 @@ class Miner:
                     synapse.data = []
                     return synapse
 
-                if synapse.reddit_global_search:
+                # Reddit sitewide search is miner-internal intent (not on ``OnDemandRequest`` wire schema).
+                use_reddit_global = reddit_global_search or getattr(
+                    synapse, "reddit_global_search", False
+                )
+                if use_reddit_global:
                     data = await scraper.on_demand_scrape(
                         usernames=synapse.usernames,
                         keywords=synapse.keywords,

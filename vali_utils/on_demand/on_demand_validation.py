@@ -68,7 +68,6 @@ class ValidationContext:
     start_date: Optional[str] = None
     end_date: Optional[str] = None
     limit: Optional[int] = 100
-    reddit_global_search: bool = False
 
 
 class OnDemandValidator:
@@ -93,14 +92,9 @@ class OnDemandValidator:
 
         keywords = []
         if hasattr(job.job, "keywords") and job.job.keywords:
-            keywords = list(job.job.keywords)
-
-        reddit_global_search = False
-        if getattr(job.job, "platform", None) == "reddit":
-            if getattr(job.job, "subreddit", None):
-                keywords.insert(0, job.job.subreddit)
-            elif not usernames and keywords:
-                reddit_global_search = True
+            keywords = job.job.keywords
+        if hasattr(job.job, "subreddit") and job.job.subreddit:
+            keywords.insert(0, job.job.subreddit)
 
         url = None
         if hasattr(job.job, "url") and job.job.url:
@@ -115,7 +109,6 @@ class OnDemandValidator:
             start_date=job.start_date.isoformat() if job.start_date else None,
             end_date=job.end_date.isoformat() if job.end_date else None,
             limit=job.limit,
-            reddit_global_search=reddit_global_search,
         )
 
     def __init__(self, evaluator):
@@ -637,28 +630,15 @@ class OnDemandValidator:
                     limit=1,
                 )
             elif ctx.source.upper() == "REDDIT":
-                if ctx.reddit_global_search:
-                    results = await scraper.on_demand_scrape(
-                        usernames=ctx.usernames or [],
-                        keywords=ctx.keywords or [],
-                        keyword_mode=ctx.keyword_mode,
-                        start_datetime=start_dt,
-                        end_datetime=end_dt,
-                        limit=1,
-                        reddit_global_search=True,
-                    )
-                else:
-                    results = await scraper.on_demand_scrape(
-                        usernames=ctx.usernames or [],
-                        subreddit=ctx.keywords[0] if ctx.keywords else None,
-                        keywords=(
-                            ctx.keywords[1:] if len(ctx.keywords) > 1 else None
-                        ),
-                        keyword_mode=ctx.keyword_mode,
-                        start_datetime=start_dt,
-                        end_datetime=end_dt,
-                        limit=1,
-                    )
+                results = await scraper.on_demand_scrape(
+                    usernames=ctx.usernames or [],
+                    subreddit=ctx.keywords[0] if ctx.keywords else None,
+                    keywords=ctx.keywords[1:] if len(ctx.keywords) > 1 else None,
+                    keyword_mode=ctx.keyword_mode,
+                    start_datetime=start_dt,
+                    end_datetime=end_dt,
+                    limit=1,
+                )
             else:
                 bt.logging.warning(f"Unknown source {ctx.source}, assuming data exists")
                 return True
