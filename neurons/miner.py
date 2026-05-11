@@ -389,11 +389,12 @@ class Miner:
                     job
                     for job in active_jobs_response.jobs
                     if job.id not in self.processed_job_ids_cache
+                    and job.job.platform == "reddit"
                 ]
 
                 if len(jobs_to_process) > 0:
                     bt.logging.info(
-                        f"Adding {len(jobs_to_process)} job(s) to on demand scrape queue"
+                        f"Adding {len(jobs_to_process)} Reddit on-demand job(s) to scrape queue"
                     )
 
                 for job in jobs_to_process:
