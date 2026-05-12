@@ -410,7 +410,7 @@ class Miner:
             except:
                 bt.logging.exception("Failed to append to on_demand_job_queue")
 
-            await asyncio.sleep(5.0)
+            await asyncio.sleep(0.5)
 
     async def process_on_demand_jobs_queue(self):
         while not self.should_exit:
