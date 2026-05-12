@@ -784,23 +784,57 @@ class RedditJsonScraper(Scraper):
             if username == "[deleted]":
                 username = DELETED_USER
 
+            # ``name`` (fullname e.g. t3_xxx) is preferred; fall back to ``id`` for OD metadata completeness.
+            post_id = data.get("id") or ""
+            permalink = (data.get("permalink") or data.get("url") or "").strip()
+            if permalink:
+                post_url = f"{self.BASE_URL}{normalize_permalink(permalink)}"
+            else:
+                link = (data.get("url") or "").split("?")[0]
+                post_url = link if "reddit.com" in link else ""
+
+            if not post_id or not post_url:
+                bt.logging.trace("Skipping Reddit post: missing id or url")
+                return None
+
+            sub = data.get("subreddit_name_prefixed")
+            if not sub and data.get("subreddit"):
+                sub = f"r/{data['subreddit']}"
+
+            selftext = data.get("selftext")
+            if selftext is None:
+                selftext = ""
+
+            over_18 = data.get("over_18")
+            if over_18 is None:
+                over_18 = False
+
+            score_raw = data.get("score")
+            score = int(score_raw) if score_raw is not None else 0
+
+            ur_raw = data.get("upvote_ratio")
+            upvote_ratio = float(ur_raw) if ur_raw is not None else 0.0
+
+            nc_raw = data.get("num_comments")
+            num_comments = int(nc_raw) if nc_raw is not None else 0
+
             return RedditContent(
-                id=data.get("name", ""),
-                url=f"{self.BASE_URL}{normalize_permalink(data.get('permalink', ''))}",
+                id=post_id,
+                url=post_url,
                 username=username,
-                communityName=data.get("subreddit_name_prefixed", ""),
-                body=data.get("selftext", ""),
+                communityName=sub or "",
+                body=selftext,
                 createdAt=dt.datetime.utcfromtimestamp(data.get("created_utc", 0)).replace(
                     tzinfo=dt.timezone.utc
                 ),
                 dataType=RedditDataType.POST,
-                title=data.get("title", ""),
+                title=data.get("title") or "",
                 parentId=None,
                 media=media_urls if media_urls else None,
-                is_nsfw=data.get("over_18", False),
-                score=data.get("score"),
-                upvote_ratio=data.get("upvote_ratio"),
-                num_comments=data.get("num_comments"),
+                is_nsfw=bool(over_18),
+                score=score,
+                upvote_ratio=upvote_ratio,
+                num_comments=num_comments,
                 scrapedAt=dt.datetime.now(dt.timezone.utc),
             )
         except Exception as e:
@@ -822,12 +856,33 @@ class RedditJsonScraper(Scraper):
             if username == "[deleted]":
                 username = DELETED_USER
 
+            comment_id = data.get("name") or data.get("id") or ""
+            permalink = (data.get("permalink") or "").strip()
+            if permalink:
+                comment_url = f"{self.BASE_URL}{normalize_permalink(permalink)}"
+            else:
+                comment_url = ""
+
+            if not comment_id or not comment_url:
+                bt.logging.trace("Skipping Reddit comment: missing id or url")
+                return None
+
+            sub = data.get("subreddit_name_prefixed")
+            if not sub and data.get("subreddit"):
+                sub = f"r/{data['subreddit']}"
+
+            body = data.get("body") or ""
+
+            score_raw = data.get("score")
+            score = int(score_raw) if score_raw is not None else 0
+
+            # OD metadata completeness requires non-null (comments have no ratio / thread count on Reddit JSON).
             return RedditContent(
-                id=data.get("name", ""),
-                url=f"{self.BASE_URL}{normalize_permalink(data.get('permalink', ''))}",
+                id=comment_id,
+                url=comment_url,
                 username=username,
-                communityName=data.get("subreddit_name_prefixed", ""),
-                body=data.get("body", ""),
+                communityName=sub or "",
+                body=body,
                 createdAt=dt.datetime.utcfromtimestamp(data.get("created_utc", 0)).replace(
                     tzinfo=dt.timezone.utc
                 ),
@@ -835,10 +890,10 @@ class RedditJsonScraper(Scraper):
                 title=None,
                 parentId=data.get("parent_id"),
                 media=None,
-                is_nsfw=parent_nsfw,  # Inherit NSFW from parent post
-                score=data.get("score"),
-                upvote_ratio=None,
-                num_comments=None,
+                is_nsfw=bool(parent_nsfw),
+                score=score,
+                upvote_ratio=0.0,
+                num_comments=0,
                 scrapedAt=dt.datetime.now(dt.timezone.utc),
             )
         except Exception as e:

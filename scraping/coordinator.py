@@ -14,15 +14,6 @@ from scraping.provider import ScraperProvider
 from scraping.scraper import ScrapeConfig, ScraperId
 from storage.miner.miner_storage import MinerStorage
 
-# Global bounds for adaptive scraping parameters.
-CADENCE_SECONDS_MIN: int = 1
-CADENCE_SECONDS_MAX: int = 86_400  # 24 hours
-
-MAX_AGE_HINT_MINUTES_MIN: int = 1
-MAX_AGE_HINT_MINUTES_MAX: int = 1_440  # 24 hours
-
-MAX_DATA_ENTITIES_MIN: int = 1
-MAX_DATA_ENTITIES_MAX: int = 100
 
 class LabelScrapingConfig(StrictBaseModel):
     """Describes what labels to scrape."""
