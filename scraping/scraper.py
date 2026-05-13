@@ -18,6 +18,7 @@ class ScraperId(str, Enum):
     X_MICROWORLDS = "X.microworlds"
     X_APIDOJO = "X.apidojo"
     X_QUACKER = "X.quacker"
+    X_TWIKIT = "X.twikit"
 
 
 class ValidationResult(StrictBaseModel):

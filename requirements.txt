@@ -27,3 +27,7 @@ prometheus-fastapi-instrumentator==7.1.0
 prometheus_client==0.22.1
 substrate-interface==1.7.11
 aiohttp-socks==0.9.1
+curl_cffi==0.10.0
+beautifulsoup4==4.12.3
+filetype==1.2.0
+pyotp==2.9.0

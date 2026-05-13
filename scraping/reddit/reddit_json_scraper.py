@@ -786,7 +786,7 @@ class RedditJsonScraper(Scraper):
 
             # ``name`` (fullname e.g. t3_xxx) is preferred; fall back to ``id`` for OD metadata completeness.
             post_id = data.get("id") or ""
-            permalink = (data.get("permalink") or data.get("url") or "").strip()
+            permalink = (data.get("permalink") or "").strip()
             if permalink:
                 post_url = f"{self.BASE_URL}{normalize_permalink(permalink)}"
             else:

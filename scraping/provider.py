@@ -8,6 +8,7 @@ from scraping.scraper import Scraper, ScraperId
 from scraping.x.microworlds_scraper import MicroworldsTwitterScraper
 from scraping.x.apidojo_scraper import ApiDojoTwitterScraper
 from scraping.x.quacker_url_scraper import QuackerUrlScraper
+from scraping.x.twikit_scraper import TwikitTwitterScraper
 
 
 DEFAULT_FACTORIES = {
@@ -18,6 +19,7 @@ DEFAULT_FACTORIES = {
     ScraperId.X_MICROWORLDS: MicroworldsTwitterScraper,
     ScraperId.X_APIDOJO: ApiDojoTwitterScraper,
     ScraperId.X_QUACKER: QuackerUrlScraper,
+    ScraperId.X_TWIKIT: TwikitTwitterScraper,
 }
 
 
