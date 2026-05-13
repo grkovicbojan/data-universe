@@ -16,6 +16,7 @@
 # DEALINGS IN THE SOFTWARE.
 
 import asyncio
+import os
 from collections import defaultdict
 import contextlib
 import copy
@@ -54,6 +55,10 @@ from dynamic_desirability.desirability_retrieval import run_retrieval_from_api
 from common.data import DataLabel, DataSource, DataEntity
 from common.protocol import OnDemandRequest
 from common.date_range import DateRange
+from common.od_self_check_entities import (
+    self_check_and_filter_od_entities,
+    validation_context_from_on_demand_request,
+)
 from scraping.scraper import ScrapeConfig, ScraperId
 
 from scraping.x.apidojo_scraper import ApiDojoTwitterScraper
@@ -813,6 +818,25 @@ class Miner:
                         limit=synapse.limit,
                     )
                 synapse.data = data[: synapse.limit] if synapse.limit else data
+
+            else:
+                synapse.data = []
+
+            # Validator-aligned OD self-check (format, job match, metadata, optional scraper).
+            if synapse.data and synapse.source in (DataSource.X, DataSource.REDDIT):
+                od_ctx = validation_context_from_on_demand_request(synapse)
+                hk = getattr(self.wallet.hotkey, "ss58_address", "miner_od")
+                max_n = synapse.limit if synapse.limit else len(synapse.data)
+                run_scraper = os.getenv(
+                    "MINER_OD_SELF_CHECK_SCRAPER", "1"
+                ).lower() not in ("0", "false", "no")
+                synapse.data = await self_check_and_filter_od_entities(
+                    od_ctx,
+                    list(synapse.data),
+                    max_n,
+                    hk,
+                    run_scraper_validation=run_scraper,
+                )
 
             synapse.version = constants.PROTOCOL_VERSION
 
