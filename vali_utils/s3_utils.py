@@ -1376,7 +1376,7 @@ class DuckDBSampledValidator:
                 media=media_value,
                 user_id=str(row.get('user_id', '')),
                 user_display_name=str(row.get('user_display_name', '')) if pd.notna(row.get('user_display_name', None)) else None,
-                user_verified=bool(row.get('user_verified', False)),
+                user_verified=bool(row.get('user_verified', False)) if pd.notna(row.get('user_verified', None)) else None,
                 tweet_id=str(row.get('tweet_id', '')),
                 is_reply=bool(row.get('is_reply', False)),
                 is_quote=bool(row.get('is_quote', False)),
