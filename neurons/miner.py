@@ -62,6 +62,7 @@ from common.od_self_check_entities import (
 from scraping.scraper import ScrapeConfig, ScraperId
 
 from scraping.x.apidojo_scraper import ApiDojoTwitterScraper
+from scraping.x.twikit_scraper import TwikitTwitterScraper
 from scraping.reddit.reddit_custom_scraper import RedditCustomScraper
 from scraping.reddit.reddit_json_scraper import RedditJsonScraper
 import json
@@ -70,6 +71,22 @@ from vali_utils.on_demand.output_models import create_organic_output_dict
 
 # Matches ``OnDemandRequest.limit`` upper bound in ``common/protocol.py`` (do not change protocol here).
 _ON_DEMAND_LIMIT_MAX = 1000
+
+# On-demand X: ``apidojo`` (default, Apify) or ``twikit`` (browser cookies + curl_cffi; see ``TWIKIT_*`` env).
+_MINER_X_OD_SCRAPER_ENV = "MINER_X_ON_DEMAND_SCRAPER"
+
+
+def _x_on_demand_scraper():
+    mode = (os.getenv(_MINER_X_OD_SCRAPER_ENV) or "apidojo").strip().lower()
+    if mode in ("twikit", "x.twikit"):
+        bt.logging.info(
+            f"On-demand X scraper: TwikitTwitterScraper ({_MINER_X_OD_SCRAPER_ENV}={mode!r})"
+        )
+        return TwikitTwitterScraper()
+    bt.logging.trace(
+        f"On-demand X scraper: ApiDojoTwitterScraper ({_MINER_X_OD_SCRAPER_ENV}={mode!r})"
+    )
+    return ApiDojoTwitterScraper()
 
 # Enable logging to the miner TODO move it to some different location
 bt.logging.set_info(True)
@@ -760,10 +777,9 @@ class Miner:
 
             bt.logging.info(f"Date range: {start_dt} to {end_dt}")
 
-            # For X source, use the standard scraper with on_demand_scrape
+            # For X source, use Apify (apidojo) or twikit per MINER_X_ON_DEMAND_SCRAPER.
             if synapse.source == DataSource.X:
-                # Initialize the standard scraper (now includes low-engagement posts)
-                scraper = ApiDojoTwitterScraper()
+                scraper = _x_on_demand_scraper()
                 data_entities = await scraper.on_demand_scrape(
                     usernames=synapse.usernames,
                     keywords=synapse.keywords,

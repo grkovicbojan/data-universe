@@ -5,18 +5,21 @@ Filters scraped ``DataEntity`` rows before returning them on ``OnDemandRequest``
 synapse) or before upload (API jobs that reuse the same scrape path).
 
 Set ``MINER_OD_SELF_CHECK_SCRAPER=0`` to skip live ``scraper.validate`` (phase 4) while still
-running format, job-match, and metadata checks — useful if X Apify credentials are unavailable.
+running format, job-match, and metadata checks — useful if X Apify credentials are unavailable
+or if you use Twikit without Apify for on-demand.
 
 Phases (per entity, in order):
   1) Parse / format (``XContent`` / ``RedditContent``), dedupe by URI
   2) Request-field + time window checks (same rules as validator)
   3) ``validate_metadata_completeness`` (``vali_utils/on_demand/output_models``)
-  4) Optional live ``scraper.validate`` (``ApiDojoTwitterScraper`` / ``RedditJsonScraper``)
+  4) Optional live ``scraper.validate`` (``ApiDojoTwitterScraper``, ``TwikitTwitterScraper`` if
+     ``MINER_X_ON_DEMAND_SCRAPER=twikit``, or ``RedditJsonScraper``)
 """
 
 from __future__ import annotations
 
 import json
+import os
 import datetime as dt
 from typing import List, Optional
 
@@ -28,6 +31,7 @@ from common.protocol import OnDemandRequest
 from scraping.reddit.model import RedditContent
 from scraping.reddit.reddit_json_scraper import RedditJsonScraper
 from scraping.x.apidojo_scraper import ApiDojoTwitterScraper
+from scraping.x.twikit_scraper import TwikitTwitterScraper
 from scraping.x.model import XContent
 from vali_utils.on_demand import utils as on_demand_utils
 from vali_utils.on_demand.on_demand_validation import ValidationContext
@@ -242,15 +246,18 @@ def _entity_for_scraper_validate(entity: DataEntity, ctx: ValidationContext) -> 
 async def _scraper_validate_one(
     ctx: ValidationContext,
     entity: DataEntity,
-    x_scraper: Optional[ApiDojoTwitterScraper],
+    x_scraper: Optional[ApiDojoTwitterScraper | TwikitTwitterScraper],
     reddit_scraper: Optional[RedditJsonScraper],
 ) -> bool:
     ent = _entity_for_scraper_validate(entity, ctx)
     try:
         if ctx.source.upper() == "X" and x_scraper is not None:
-            results = await x_scraper.validate(
-                entities=[ent], allow_low_engagement=True
-            )
+            if isinstance(x_scraper, ApiDojoTwitterScraper):
+                results = await x_scraper.validate(
+                    entities=[ent], allow_low_engagement=True
+                )
+            else:
+                results = await x_scraper.validate([ent])
         elif ctx.source.upper() == "REDDIT" and reddit_scraper is not None:
             results = await reddit_scraper.validate([ent])
         else:
@@ -280,11 +287,15 @@ async def self_check_and_filter_od_entities(
     if not entities or max_count <= 0:
         return []
 
-    x_scraper: Optional[ApiDojoTwitterScraper] = None
+    x_scraper: Optional[ApiDojoTwitterScraper | TwikitTwitterScraper] = None
     reddit_scraper: Optional[RedditJsonScraper] = None
     if run_scraper_validation:
         if ctx.source.upper() == "X":
-            x_scraper = ApiDojoTwitterScraper()
+            mode = (os.getenv("MINER_X_ON_DEMAND_SCRAPER") or "apidojo").strip().lower()
+            if mode in ("twikit", "x.twikit"):
+                x_scraper = TwikitTwitterScraper()
+            else:
+                x_scraper = ApiDojoTwitterScraper()
         elif ctx.source.upper() == "REDDIT":
             reddit_scraper = RedditJsonScraper()
 

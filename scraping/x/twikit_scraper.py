@@ -50,6 +50,7 @@ import bittensor as bt
 import datetime as dt
 
 from common.data import DataEntity
+from common.protocol import KeywordMode
 from scraping.scraper import ScrapeConfig, Scraper, ValidationResult
 from scraping.x.model import XContent
 from scraping.x import utils
@@ -287,6 +288,57 @@ def build_twitter_search_query(scrape_config: ScrapeConfig) -> str:
     return " ".join(parts)
 
 
+def build_on_demand_search_query(
+    usernames: Optional[List[str]],
+    keywords: Optional[List[str]],
+    keyword_mode: KeywordMode,
+    start_datetime: Optional[dt.datetime],
+    end_datetime: Optional[dt.datetime],
+) -> str:
+    """Build an X search query for on-demand jobs (aligned with ``ApiDojoTwitterScraper``)."""
+    date_format = "%Y-%m-%d_%H:%M:%S_UTC"
+    query_parts: List[str] = []
+    if start_datetime:
+        query_parts.append(
+            f"since:{start_datetime.astimezone(tz=dt.timezone.utc).strftime(date_format)}"
+        )
+    if end_datetime:
+        query_parts.append(
+            f"until:{end_datetime.astimezone(tz=dt.timezone.utc).strftime(date_format)}"
+        )
+    if usernames:
+        username_queries = [f"from:{u.removeprefix('@')}" for u in usernames]
+        query_parts.append(f"({' OR '.join(username_queries)})")
+    if keywords:
+        quoted_keywords = [f'"{kw}"' for kw in keywords]
+        if keyword_mode == "all":
+            query_parts.append(f"({' AND '.join(quoted_keywords)})")
+        else:
+            query_parts.append(f"({' OR '.join(quoted_keywords)})")
+    if not query_parts or (not usernames and not keywords):
+        query_parts.append("e")
+    return " ".join(query_parts)
+
+
+def _on_demand_timestamp_in_window(
+    ts: dt.datetime,
+    start_datetime: Optional[dt.datetime],
+    end_datetime: Optional[dt.datetime],
+) -> bool:
+    """Half-open window [start, end) when both bounds exist; otherwise open-ended."""
+    if ts.tzinfo is None:
+        ts = ts.replace(tzinfo=dt.timezone.utc)
+    if start_datetime is not None and end_datetime is not None:
+        start_utc = start_datetime.astimezone(dt.timezone.utc)
+        end_utc = end_datetime.astimezone(dt.timezone.utc)
+        return start_utc <= ts < end_utc
+    if start_datetime is not None:
+        return ts >= start_datetime.astimezone(dt.timezone.utc)
+    if end_datetime is not None:
+        return ts < end_datetime.astimezone(dt.timezone.utc)
+    return True
+
+
 def _tweet_hashtag_list(tweet) -> List[str]:
     """Build ``#tag`` list (and cashtags as ``#SYMBOL``) like other X scrapers."""
     tags: List[str] = []
@@ -321,11 +373,15 @@ def _media_urls_from_tweet(tweet) -> Optional[List[str]]:
     return urls or None
 
 
-def tweet_to_xcontent(tweet) -> Optional[Tuple[XContent, bool]]:
+def tweet_to_xcontent(
+    tweet, *, include_retweets: bool = False
+) -> Optional[Tuple[XContent, bool]]:
     """
     Convert a twikit ``Tweet`` to ``XContent`` plus ``is_retweet``.
 
-    Returns None if the tweet should be dropped (e.g. missing user, retweet card).
+    Returns None if the tweet should be dropped (e.g. missing user).
+    Retweets are skipped unless ``include_retweets`` is True (on-demand parity
+    with Apidojo ``check_engagement=False``).
     """
     from scraping.x.twikit.tweet import Tweet as TwikitTweet
 
@@ -333,7 +389,7 @@ def tweet_to_xcontent(tweet) -> Optional[Tuple[XContent, bool]]:
         return None
 
     is_retweet = tweet.retweeted_tweet is not None
-    if is_retweet:
+    if is_retweet and not include_retweets:
         return None
 
     user = tweet.user
@@ -342,6 +398,11 @@ def tweet_to_xcontent(tweet) -> Optional[Tuple[XContent, bool]]:
 
     try:
         raw_text = tweet.full_text or tweet.text or ""
+        if (not raw_text or not raw_text.strip()) and tweet.retweeted_tweet is not None:
+            inner = tweet.retweeted_tweet
+            inner_user = inner.user.screen_name if inner.user else "?"
+            inner_txt = (inner.full_text or inner.text or "").replace("\n", " ")
+            raw_text = f"RT @{inner_user}: {inner_txt}"
         text = utils.sanitize_scraped_tweet(raw_text)
         url = f"https://x.com/{user.screen_name}/status/{tweet.id}"
         ts = tweet.created_at_datetime
@@ -460,6 +521,51 @@ class TwikitTwitterScraper(Scraper):
             )
         return None
 
+    async def _collect_entities_from_search(
+        self,
+        client,
+        query: str,
+        limit: int,
+        ts_ok,
+        include_retweets: bool,
+    ) -> List[DataEntity]:
+        """Paginate ``search_tweet`` (Latest) until ``limit`` entities pass ``ts_ok``."""
+        collected: List[DataEntity] = []
+        try:
+            page = await client.search_tweet(query, "Latest", count=20)
+        except Exception:
+            bt.logging.error(
+                f"Twikit search_tweet failed for {query!r}: {traceback.format_exc()}."
+            )
+            return []
+
+        while len(collected) < limit:
+            for tweet in page:
+                if len(collected) >= limit:
+                    break
+                parsed = tweet_to_xcontent(tweet, include_retweets=include_retweets)
+                if not parsed:
+                    continue
+                x_content, _ = parsed
+                if not ts_ok(x_content.timestamp):
+                    continue
+                collected.append(XContent.to_data_entity(x_content))
+
+            if len(collected) >= limit:
+                break
+
+            try:
+                nxt = await page.next()
+            except Exception:
+                bt.logging.trace(f"Twikit: page.next() ended: {traceback.format_exc()}.")
+                break
+
+            if not nxt or len(nxt) == 0:
+                break
+            page = nxt
+
+        return collected
+
     async def validate(self, entities: List[DataEntity]) -> List[ValidationResult]:
         if not entities:
             return []
@@ -536,7 +642,7 @@ class TwikitTwitterScraper(Scraper):
                             is_retweet=True,
                         )
 
-                    parsed = tweet_to_xcontent(tw)
+                    parsed = tweet_to_xcontent(tw, include_retweets=False)
                     if parsed is None:
                         return ValidationResult(
                             is_valid=False,
@@ -581,42 +687,105 @@ class TwikitTwitterScraper(Scraper):
 
         query = build_twitter_search_query(scrape_config)
         limit = int(scrape_config.entity_limit or 150)
-        collected: List[DataEntity] = []
 
-        try:
-            page = await client.search_tweet(query, "Latest", count=20)
-        except Exception:
-            bt.logging.error(
-                f"Twikit search_tweet failed for {query!r}: {traceback.format_exc()}."
-            )
-            return []
-
-        while len(collected) < limit:
-            for tweet in page:
-                if len(collected) >= limit:
-                    break
-                parsed = tweet_to_xcontent(tweet)
-                if not parsed:
-                    continue
-                x_content, _ = parsed
-                if not scrape_config.date_range.contains(x_content.timestamp):
-                    continue
-                collected.append(XContent.to_data_entity(x_content))
-
-            if len(collected) >= limit:
-                break
-
-            try:
-                nxt = await page.next()
-            except Exception:
-                bt.logging.trace(f"Twikit: page.next() ended: {traceback.format_exc()}.")
-                break
-
-            if not nxt or len(nxt) == 0:
-                break
-            page = nxt
+        collected = await self._collect_entities_from_search(
+            client,
+            query,
+            limit,
+            ts_ok=lambda ts: scrape_config.date_range.contains(ts),
+            include_retweets=False,
+        )
 
         bt.logging.success(
             f"Twikit scrape completed for query={query!r}: {len(collected)} entities."
+        )
+        return collected
+
+    async def on_demand_scrape(
+        self,
+        usernames: List[str] = None,
+        keywords: List[str] = None,
+        url: str = None,
+        keyword_mode: KeywordMode = "all",
+        start_datetime: dt.datetime = None,
+        end_datetime: dt.datetime = None,
+        limit: int = 100,
+    ) -> List[DataEntity]:
+        """
+        On-demand X scrape: single-tweet URL lookup or keyword/username search.
+
+        Matches ``ApiDojoTwitterScraper.on_demand_scrape`` (including low-engagement
+        posts; retweets are included in results when returned by search).
+        """
+        if not self._sessions:
+            bt.logging.warning("Twikit on_demand_scrape: no sessions configured; returning [].")
+            return []
+
+        client = await self._make_client_rotating()
+        if client is None:
+            return []
+
+        if url:
+            bt.logging.trace(f"Twikit on-demand scrape for URL: {url}")
+            if not utils.is_valid_twitter_url(url):
+                bt.logging.error(f"Invalid Twitter URL: {url}")
+                return []
+            tweet_id = extract_status_id_from_url(url)
+            if not tweet_id:
+                bt.logging.error(f"Could not parse tweet id from URL: {url}")
+                return []
+            try:
+                tw = await client.get_tweet_by_id(tweet_id)
+            except Exception:
+                bt.logging.exception(f"Twikit failed to fetch tweet for URL {url}")
+                return []
+            parsed = tweet_to_xcontent(tw, include_retweets=True)
+            if not parsed:
+                return []
+            x_content, _ = parsed
+            if not _on_demand_timestamp_in_window(
+                x_content.timestamp, start_datetime, end_datetime
+            ):
+                return []
+            bt.logging.success(
+                f"Twikit on-demand URL scrape completed for {url!r}: 1 entity."
+            )
+            return [XContent.to_data_entity(x_content)]
+
+        if all(
+            param is None
+            for param in [usernames, keywords, start_datetime, end_datetime]
+        ):
+            bt.logging.trace(
+                "Twikit on_demand_scrape: all search parameters None; returning []."
+            )
+            return []
+
+        bt.logging.trace(
+            f"Twikit on-demand scrape usernames={usernames}, keywords={keywords}, "
+            f"keyword_mode={keyword_mode}, start={start_datetime}, end={end_datetime}"
+        )
+
+        query = build_on_demand_search_query(
+            usernames=usernames,
+            keywords=keywords,
+            keyword_mode=keyword_mode,
+            start_datetime=start_datetime,
+            end_datetime=end_datetime,
+        )
+
+        def ts_ok(ts: dt.datetime) -> bool:
+            return _on_demand_timestamp_in_window(ts, start_datetime, end_datetime)
+
+        collected = await self._collect_entities_from_search(
+            client,
+            query,
+            int(limit),
+            ts_ok=ts_ok,
+            include_retweets=True,
+        )
+
+        bt.logging.success(
+            f"Twikit on-demand search completed for query={query!r}: {len(collected)} entities."
         )
         return collected
