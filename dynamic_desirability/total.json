@@ -1,0 +1,5762 @@
+[
+    {
+        "id": "crawler-0-xazz7g-j0unddfdaodbbb",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#Trump",
+            "post_start_datetime": "2026-04-05T23:00:00",
+            "post_end_datetime": "2026-05-06T22:59:59"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-69380d93-c44b-4221-9639-ab6a808ca987",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#mufc",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-aahvovgr4bbu8qth9urh0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "panini",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-04-09T22:00:00",
+            "post_end_datetime": "2026-06-05T22:00:00"
+        }
+    },
+    {
+        "id": "crawler-1-aahvovgr4bbu8qth9urh0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "topps",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-04-09T22:00:00",
+            "post_end_datetime": "2026-06-05T22:00:00"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-69380d93-c44b-4221-9639-ab6a808ca987",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#f1",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-69380d93-c44b-4221-9639-ab6a808ca987",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#gfvip",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-cb79ba7e-e69c-44e6-bc84-8b1890894026",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#trading",
+            "post_start_datetime": "2026-03-12T10:17:28",
+            "post_end_datetime": "2026-05-11T10:17:28"
+        }
+    },
+    {
+        "id": "crawler-6-c435b0c2-8ca8-484c-83f1-8f22143718d7",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/futurology",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-b3520dd0-b5fb-49ae-8d62-1c8f8264ddda",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "uk personam finance",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-ed4234f5-f56a-4dc8-b125-a44a9812a036",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "ai music",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-6373699a-4a54-4543-90b4-8c4720cf7bf5",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "cinema comeback",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-3392e7b2-8a1f-4441-a4a0-bf4206b56fc8",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#ceasefire",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-a551fd73-abf8-4ac5-af04-809f881be58f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#swissbanking",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-12-6ecfa77d-5f4a-420a-9d16-afc68e7b2811",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/shortscreators",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-aahvovgr4bbu8qth9urh0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "hobby",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-04-09T22:00:00",
+            "post_end_datetime": "2026-06-05T22:00:00"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-69380d93-c44b-4221-9639-ab6a808ca987",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#granhermano",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-12a13068-c169-4783-8480-0e23c46e33ae",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/okbuddycinephile",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-12a13068-c169-4783-8480-0e23c46e33ae",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/chatgpt",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-12a13068-c169-4783-8480-0e23c46e33ae",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/marvelrivals",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-12a13068-c169-4783-8480-0e23c46e33ae",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/allthequestions",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-c01b1f3f-58c2-4149-9bd4-7b5516786806",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "revival",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-89381e7d-b278-4ec8-a89a-fad8cc2ae1dd",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#spacex",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-fa041e13-eb0e-459c-b35c-056723b8aa3e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "uk green policy",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-01fe6054-6a73-4acd-af81-9be35b0c722f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "stan culture",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-f8203229-abf8-467b-a68f-0e874ae4137b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#nondoms",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-aae8e5d5-10c9-419f-a877-23c88129b6e0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#nyc",
+            "post_start_datetime": "2026-03-12T10:17:28",
+            "post_end_datetime": "2026-05-11T10:17:28"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-aae8e5d5-10c9-419f-a877-23c88129b6e0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#ggmu",
+            "post_start_datetime": "2026-03-12T10:17:28",
+            "post_end_datetime": "2026-05-11T10:17:28"
+        }
+    },
+    {
+        "id": "crawler-5-fd75f66a-b7d6-423e-87d4-d5c013776a1a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "dogs statistics",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-fd75f66a-b7d6-423e-87d4-d5c013776a1a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "dog owner",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-7-b727bb70-54fb-42a9-966e-d59289e7ea15",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#wildlifeconservation",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-b727bb70-54fb-42a9-966e-d59289e7ea15",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "taxonomia",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-f98e07ac-b7c6-4411-a839-2e1c3e3b8a17",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "georgian wine",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-f98e07ac-b7c6-4411-a839-2e1c3e3b8a17",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "chinese wine",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-7dda24dc-6d35-42c2-a560-9254730b389f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "vivino",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-7-3ae036ad-adb3-4744-9b78-1a3da2cec950",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#japan",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-7a9fca64-5e9c-418c-a9ed-65063baed9ca",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#cricket2025",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-be4fadb7-a4a2-4713-8f1b-fe2a331c9c01",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#longformvideo",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-77696377-fb9f-4767-8b96-e947c71d94c5",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "creator burnout",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-19-147a6c39-1641-46d9-ba29-927248ea719d",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/snusu",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-23-687e1566-5c2a-44ed-977c-53a1f6731f5a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#aiincode",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-69380d93-c44b-4221-9639-ab6a808ca987",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#\u0639\u0627\u062c\u0644",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-f88627fe-ef4b-4697-8352-1f0e9411724e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#ad",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-f88627fe-ef4b-4697-8352-1f0e9411724e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#btc",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-f88627fe-ef4b-4697-8352-1f0e9411724e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#yahoo\u30cb\u30e5\u30fc\u30b9",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-f88627fe-ef4b-4697-8352-1f0e9411724e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#earthquake",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-aae8e5d5-10c9-419f-a877-23c88129b6e0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#istandwithakpabio",
+            "post_start_datetime": "2026-03-12T10:17:28",
+            "post_end_datetime": "2026-05-11T10:17:28"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-aae8e5d5-10c9-419f-a877-23c88129b6e0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#lasvegasgp",
+            "post_start_datetime": "2026-03-12T10:17:28",
+            "post_end_datetime": "2026-05-11T10:17:28"
+        }
+    },
+    {
+        "id": "crawler-2-c451a86a-318d-4073-ae64-5b98c712de09",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "ai movie",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-11-f98e07ac-b7c6-4411-a839-2e1c3e3b8a17",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#chinesewinery",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-9-30d1426a-d702-4929-b18d-5d0808609e92",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#winefestivals",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-20-99acc274-5631-4174-b7ca-6b19f05c6e8b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "when wine",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-bdc7889c-ceab-4d96-aaf4-92751eb9d8ef",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "chile lithium",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-042d3fb8-4a64-46c6-9822-514233db00e2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "transit",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-14-9c30a7a2-df62-4d38-8ebc-8d7fe50c4361",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#inflation",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-b1508b52-8488-48c0-aa1d-eec713fb5cf0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#headspa",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-17-68dc4627-f424-4f3d-bd29-45b3fab171a7",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/askagerman/france",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-18-156bc941-2bae-4e69-ab21-0d47755caaca",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#championsleague",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-49a8759f-6278-4b61-9f5f-034a07335893",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "eu ai act",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-11-49a8759f-6278-4b61-9f5f-034a07335893",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#airegulation",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-f88627fe-ef4b-4697-8352-1f0e9411724e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#iran",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-aae8e5d5-10c9-419f-a877-23c88129b6e0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#viral",
+            "post_start_datetime": "2026-03-12T10:17:28",
+            "post_end_datetime": "2026-05-11T10:17:28"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-02d52256-9d36-486b-ba13-e7222875d268",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#iranmassacre",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-870cak08--hxttongbc5g",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "datauniverse",
+            "platform": "reddit",
+            "label": "r/bittensor_",
+            "post_start_datetime": "2026-04-12T07:00:00",
+            "post_end_datetime": "2026-05-13T06:59:59"
+        }
+    },
+    {
+        "id": "crawler-6-c01b1f3f-58c2-4149-9bd4-7b5516786806",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/nuclearenergy",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-c826a22d-3a17-4bd0-b8ae-aa8d8c8af825",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#celebrityscandal",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-b3520dd0-b5fb-49ae-8d62-1c8f8264ddda",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "uk financial literacy",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-b3520dd0-b5fb-49ae-8d62-1c8f8264ddda",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "uk personam finance",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-7-4a2448a0-4f07-4850-b7d9-808a8932ce0d",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#uktenants",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-43568d82-9db2-4d8e-9180-2da37abe45a5",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "glastonbury",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-3848aeeb-a702-4b95-871e-5da302916914",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#sudanesearmy",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-01332ba1-d07e-4287-84d2-db1d482e9af7",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "reef tourism",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-01332ba1-d07e-4287-84d2-db1d482e9af7",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#reeftourism",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-d32e2dad-0741-4c7f-8f30-b2b491831b43",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "humain-animal conflict",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-fd75f66a-b7d6-423e-87d4-d5c013776a1a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "dogs statistics",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-99acc274-5631-4174-b7ca-6b19f05c6e8b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "cellartracker",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-a5199e65-7ce1-4369-bbd7-a96d2a0f393a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "open models",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-7b393978-d6b4-4005-b4b2-44745c692231",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "uruguay agrotech",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-7b393978-d6b4-4005-b4b2-44745c692231",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "export sentiment",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-6054873d-6a47-46fd-8c90-889ef7729039",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "commuter reactions",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-9-24504ca3-eeb7-4127-8ab5-ba8c043c2aac",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#sliwa2025",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-15-24504ca3-eeb7-4127-8ab5-ba8c043c2aac",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "dsa discussion",
+            "platform": "reddit",
+            "label": "r/socialism",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-c6031fbd-f854-4f51-a1b7-e7116781be1c",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "reconstruction",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-29-687e1566-5c2a-44ed-977c-53a1f6731f5a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/chatgpt",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-22-687e1566-5c2a-44ed-977c-53a1f6731f5a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#aiagents",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-687e1566-5c2a-44ed-977c-53a1f6731f5a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "claude",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-16-f137c0a3-6fe3-41ba-8d4a-9dc4395a295f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "us border patrol",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-05b28de9-21e0-42da-876f-30827e5ef918",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#lacasadelosfamososcol3",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-5c22e747-1eb0-4686-92b0-2c2dbd7f2541",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#wweraw",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-02d52256-9d36-486b-ba13-e7222875d268",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#perfectmatchxtra",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-02d52256-9d36-486b-ba13-e7222875d268",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#\u3070\u3051\u3070\u3051",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-02d52256-9d36-486b-ba13-e7222875d268",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#epstein",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-qjdesa-qi57khrkzadp6x",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/bitensor_",
+            "post_start_datetime": "2026-04-12T07:00:00",
+            "post_end_datetime": "2026-05-13T06:59:59"
+        }
+    },
+    {
+        "id": "crawler-4-f8203229-abf8-467b-a68f-0e874ae4137b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#nondomtax",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-9-99acc274-5631-4174-b7ca-6b19f05c6e8b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "my wine world",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-99acc274-5631-4174-b7ca-6b19f05c6e8b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "my wine world",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-c04af950-998b-4e4c-b704-60df338f4bf0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "balkan tourism",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-72b246b8-f356-47bb-9696-d0436fd21f1d",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#waterpolicy",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-17-24504ca3-eeb7-4127-8ab5-ba8c043c2aac",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "national commentary",
+            "platform": "reddit",
+            "label": "r/politics",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-7a9fca64-5e9c-418c-a9ed-65063baed9ca",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "fan sentiment",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-13-f137c0a3-6fe3-41ba-8d4a-9dc4395a295f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "ice raid",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-12-de81abb7-ec6d-4cc0-967d-bd1801b95235",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#ozempic",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-15-49a8759f-6278-4b61-9f5f-034a07335893",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/europe",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-05b28de9-21e0-42da-876f-30827e5ef918",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#trump",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-05b28de9-21e0-42da-876f-30827e5ef918",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#tiktok",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-05b28de9-21e0-42da-876f-30827e5ef918",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#pr",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-02d52256-9d36-486b-ba13-e7222875d268",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#bts",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-13-7dda24dc-6d35-42c2-a560-9254730b389f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "food pairing",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-28-99acc274-5631-4174-b7ca-6b19f05c6e8b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#wineapps",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-6127c693-a896-4be1-ad82-dfcb7f58a860",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "dollarization",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-5c22e747-1eb0-4686-92b0-2c2dbd7f2541",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#paobc",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-5c22e747-1eb0-4686-92b0-2c2dbd7f2541",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#epsteinfiles",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-5c22e747-1eb0-4686-92b0-2c2dbd7f2541",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#ucl",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-1-24504ca3-eeb7-4127-8ab5-ba8c043c2aac",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#cuomoformayor",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-24504ca3-eeb7-4127-8ab5-ba8c043c2aac",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#affordablenyc",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-5982d35e-0b66-4e54-b5da-3e6887a2c793",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "ghana",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-35e2244f-b4a1-47fb-b6a4-bb0b46f33fe2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "nickel boom",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-11-a3f1f5af-6c9b-4af8-bc41-9b0f42bb06b7",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/ethereum",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-05b28de9-21e0-42da-876f-30827e5ef918",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#bitcoin",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-6bb0c35c-ebe8-4af8-b909-0eba20f08dda",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#staracademy",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-6bb0c35c-ebe8-4af8-b909-0eba20f08dda",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#vtuber",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-aef7cf5c-f468-4297-b745-716751454d50",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#tellonym",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-aef7cf5c-f468-4297-b745-716751454d50",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#urgente",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-380d26ad-b7dd-47e2-8cc2-60b431f04c11",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#sondakika",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-7-7dda24dc-6d35-42c2-a560-9254730b389f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "vinus",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-f1a2b037-232a-4bba-81cc-93c8fab4c3cc",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "nordic sustainability",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-6127c693-a896-4be1-ad82-dfcb7f58a860",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#inflation",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-24504ca3-eeb7-4127-8ab5-ba8c043c2aac",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#nycelection2025",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-11-24504ca3-eeb7-4127-8ab5-ba8c043c2aac",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "rent policy debate",
+            "platform": "reddit",
+            "label": "r/housingnyc",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-cbcf2956-19c1-485a-8c08-ab1f64503e7e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "kenya fintech",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-77696377-fb9f-4767-8b96-e947c71d94c5",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "youtube burnout",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-14-2bca97b1-f6c4-4a29-a829-7ed23d4481e0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/football",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-10-25a4c9e2-38c2-4e98-b90b-c6d679826d4d",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#aiaudio",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-380d26ad-b7dd-47e2-8cc2-60b431f04c11",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#\u0627\u0644\u0647\u0644\u0627\u0644",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-380d26ad-b7dd-47e2-8cc2-60b431f04c11",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#nufc",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-380d26ad-b7dd-47e2-8cc2-60b431f04c11",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#bts_arirang",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-7a602ee5-832a-4575-958d-98ce8946e207",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#lcdlf6",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-7a602ee5-832a-4575-958d-98ce8946e207",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#zonauang",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-7a602ee5-832a-4575-958d-98ce8946e207",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#sstvi",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-12a13068-c169-4783-8480-0e23c46e33ae",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/news",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-aef7cf5c-f468-4297-b745-716751454d50",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#lfc",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-1-3ae036ad-adb3-4744-9b78-1a3da2cec950",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "japan",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-c6031fbd-f854-4f51-a1b7-e7116781be1c",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#ethiopia",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-ede65c51-126c-42ed-ba4e-cc490adb33df",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "ringgit watch",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-9-7db1eb01-555b-43d8-bf1a-d0a1013bc5f9",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/newzealand",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-dc1b3950-98c8-4039-b99f-c14b34cae004",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "cia ops",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-10-3c43f859-0930-42ac-aaf3-3a6f6eb9fee1",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#sleeptok",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-9-a4662485-f32f-4bd6-aed7-6e3dbced4176",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "gymtok",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-f137c0a3-6fe3-41ba-8d4a-9dc4395a295f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "chicago ice",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-f137c0a3-6fe3-41ba-8d4a-9dc4395a295f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "ice agent",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-380d26ad-b7dd-47e2-8cc2-60b431f04c11",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#ppnaravit",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-aef44c78-1505-4afa-b5e7-5a01390e7506",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "artist cancellations",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-7a602ee5-832a-4575-958d-98ce8946e207",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#breaking",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-aef7cf5c-f468-4297-b745-716751454d50",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#smackdown",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-7-57500d22-f881-4e83-8676-4356006144dd",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/psg",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-f326f076-8d7d-4d2d-beee-e3517fe3f0c8",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "youtube migration",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-12-f137c0a3-6fe3-41ba-8d4a-9dc4395a295f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "ice raid",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-f137c0a3-6fe3-41ba-8d4a-9dc4395a295f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "ice detain",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-18-de81abb7-ec6d-4cc0-967d-bd1801b95235",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/prescriptions",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-c757302a-4f05-465b-bfdf-4fcf8f1c594c",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#\u0635\u0628\u0627\u062d_\u0627\u0644\u062e\u064a\u0631",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-c757302a-4f05-465b-bfdf-4fcf8f1c594c",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#\u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-c757302a-4f05-465b-bfdf-4fcf8f1c594c",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#crypto",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-7a602ee5-832a-4575-958d-98ce8946e207",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#ta\u015facakbudeniz",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-e58d3180-afc4-4ef4-8202-9370983ed70c",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#epsteinfiles",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-e58d3180-afc4-4ef4-8202-9370983ed70c",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#ai",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-aef7cf5c-f468-4297-b745-716751454d50",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#nba",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-2-5aeb8499-d146-41a3-8409-9a92775fbf30",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "energy transition",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-7-6127c693-a896-4be1-ad82-dfcb7f58a860",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#dollarization",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-72b246b8-f356-47bb-9696-d0436fd21f1d",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "california drought",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-35e2244f-b4a1-47fb-b6a4-bb0b46f33fe2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "nickel boom",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-35e2244f-b4a1-47fb-b6a4-bb0b46f33fe2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#nickel",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-d1b1b12e-690e-43ab-a008-a177112d70a9",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "pro abortion",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-19-a4662485-f32f-4bd6-aed7-6e3dbced4176",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#gymtok",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-12-687e1566-5c2a-44ed-977c-53a1f6731f5a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "generative ai",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-c757302a-4f05-465b-bfdf-4fcf8f1c594c",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#venezuela",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-73f1fc92-b4a5-4ad3-a899-6ac788f9cc5b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "small business",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-10-6f5fd82a-0ee6-467e-98e8-17245026b813",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/europeanunion",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-2bb729c7-b028-41af-be13-29b1505c15e3",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#nowplaying",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-2bb729c7-b028-41af-be13-29b1505c15e3",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#isfad",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-3eec338a-1f96-4b1c-b9b8-ebf1a538aab4",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#epstein",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-3eec338a-1f96-4b1c-b9b8-ebf1a538aab4",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#bts",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-3eec338a-1f96-4b1c-b9b8-ebf1a538aab4",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/unitedstatesofindia",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-3-6f5fd82a-0ee6-467e-98e8-17245026b813",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "ad transparency",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-28-687e1566-5c2a-44ed-977c-53a1f6731f5a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/artificialinteligence",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-20-729ef49d-95d7-4ac8-a7df-957b2ecf3c07",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#gaza",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-23-729ef49d-95d7-4ac8-a7df-957b2ecf3c07",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/middleeast",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-22-f137c0a3-6fe3-41ba-8d4a-9dc4395a295f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#immigration",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-21-156bc941-2bae-4e69-ab21-0d47755caaca",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/contestofchampions",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-2bb729c7-b028-41af-be13-29b1505c15e3",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#t20worldcup",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-3eec338a-1f96-4b1c-b9b8-ebf1a538aab4",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/indianfoodphotos",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-3eec338a-1f96-4b1c-b9b8-ebf1a538aab4",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/samsunggalaxy",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-c757302a-4f05-465b-bfdf-4fcf8f1c594c",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#kingrezapahlavi",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-bbe70391-23fd-457b-9398-7344135f7a5d",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#rdc",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-4e9b2b25-606d-4cd1-8812-c92b7544a195",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#tr\u00easgra\u00e7as",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-2bb729c7-b028-41af-be13-29b1505c15e3",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#shorts",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-44726bb2-652b-49f3-9660-646471c93122",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/belgium",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-638da2a9-4511-43c5-a723-90b2fca5d8e6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/killtony",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-638da2a9-4511-43c5-a723-90b2fca5d8e6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/tunisia",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-7-35bd8d76-6005-4d9c-9c46-c2bf95dd8daf",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#semiconductors",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-b1508b52-8488-48c0-aa1d-eec713fb5cf0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "scalp detox",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-2bb729c7-b028-41af-be13-29b1505c15e3",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#f1jp",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-44726bb2-652b-49f3-9660-646471c93122",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/dog",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-4e9b2b25-606d-4cd1-8812-c92b7544a195",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#williamest",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-4e9b2b25-606d-4cd1-8812-c92b7544a195",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#tao",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-4e9b2b25-606d-4cd1-8812-c92b7544a195",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#xrp",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-44726bb2-652b-49f3-9660-646471c93122",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/greysanatomy",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-44726bb2-652b-49f3-9660-646471c93122",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/pmsforsale",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-44726bb2-652b-49f3-9660-646471c93122",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/discgolf",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-4e9b2b25-606d-4cd1-8812-c92b7544a195",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#sb19",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-fd81e5a0-5cff-4ffa-b189-e3f8b69dc845",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/4kbluray",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-e35c206f-6a27-48aa-993f-176de24cbef4",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/indiegaming",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-e35c206f-6a27-48aa-993f-176de24cbef4",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/germanshepherds",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-8-f98e07ac-b7c6-4411-a839-2e1c3e3b8a17",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#bajawinecountry",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-7-bdc7889c-ceab-4d96-aaf4-92751eb9d8ef",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#batteries",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-042d3fb8-4a64-46c6-9822-514233db00e2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#trade",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-7a9fca64-5e9c-418c-a9ed-65063baed9ca",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#fansentiment",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-23d0161b-6569-4819-baf8-3a9f9954a8ea",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "exports",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-d581c5cf-9d2b-48f4-9a21-9da62ecbdf90",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "experiential",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-9-3c43f859-0930-42ac-aaf3-3a6f6eb9fee1",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#relax",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-7-49a8759f-6278-4b61-9f5f-034a07335893",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "eu ai act",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-e82914a6-6834-4703-843c-7fb14f8ce20f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#\u0627\u0644\u0627\u062a\u062d\u0627\u062f",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-e82914a6-6834-4703-843c-7fb14f8ce20f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#olympiacosbc",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-5-851d7256-48eb-448b-9297-019f2d4e0c30",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#franchisefatigue",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-6bb0c35c-ebe8-4af8-b909-0eba20f08dda",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#wts",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-6bb0c35c-ebe8-4af8-b909-0eba20f08dda",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#bbvipks4",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-46504741-e11a-4bbe-96f0-5f9ccdfefbb8",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/carscirclejerk",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-46504741-e11a-4bbe-96f0-5f9ccdfefbb8",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/mysingingmonsters",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-46504741-e11a-4bbe-96f0-5f9ccdfefbb8",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/stablediffusion",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-4-1a839568-81ff-4519-8d1e-ea1693d5919e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#costofliving",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-9-cc8e4b13-252a-4013-b65b-1432020a4a9f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/grandtheftauto",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-9-d581c5cf-9d2b-48f4-9a21-9da62ecbdf90",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#immersive",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-17-2bca97b1-f6c4-4a29-a829-7ed23d4481e0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/worldcup",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-729ef49d-95d7-4ac8-a7df-957b2ecf3c07",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "free palestine",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-6bb0c35c-ebe8-4af8-b909-0eba20f08dda",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#bbmzansis6",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-e82914a6-6834-4703-843c-7fb14f8ce20f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#wwe",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-46504741-e11a-4bbe-96f0-5f9ccdfefbb8",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/bangalore",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-f51161c2-7744-4e83-a8a4-f70afccb89cc",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/islam",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-3-f47ca451-b090-40c4-8d69-8b15ac7be38e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "oscar",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-16-f98e07ac-b7c6-4411-a839-2e1c3e3b8a17",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#hampshirewine",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-9-f98e07ac-b7c6-4411-a839-2e1c3e3b8a17",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#chinawines",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-c04af950-998b-4e4c-b704-60df338f4bf0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#tourism",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-77696377-fb9f-4767-8b96-e947c71d94c5",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "hustle culture",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-11-d581c5cf-9d2b-48f4-9a21-9da62ecbdf90",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/art",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-10-d1b1b12e-690e-43ab-a008-a177112d70a9",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "reproductive right",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-e58d3180-afc4-4ef4-8202-9370983ed70c",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#ucl",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-e58d3180-afc4-4ef4-8202-9370983ed70c",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#wweraw",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-46504741-e11a-4bbe-96f0-5f9ccdfefbb8",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/dynastyff",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-e82914a6-6834-4703-843c-7fb14f8ce20f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#youtube",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-4-0bd76a53-2f41-4ea9-b634-df8586cb70dc",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#endangeredspecies",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-19-f98e07ac-b7c6-4411-a839-2e1c3e3b8a17",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#mexicanwine",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-13-f98e07ac-b7c6-4411-a839-2e1c3e3b8a17",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#englishwine",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-124f4208-42a0-4398-8246-bd5838c8aa08",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "global cricket",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-681ffe24-9958-4ae8-a420-c5b494338040",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "f1 2025",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-35bd8d76-6005-4d9c-9c46-c2bf95dd8daf",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#supplychain",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-be4fadb7-a4a2-4713-8f1b-fe2a331c9c01",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "watch time",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-17-9c30a7a2-df62-4d38-8ebc-8d7fe50c4361",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/energy",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-e82914a6-6834-4703-843c-7fb14f8ce20f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#\u0e15\u0e25\u0e32\u0e14\u0e19\u0e31\u0e14nct",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-e58d3180-afc4-4ef4-8202-9370983ed70c",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#paobc",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-fd81e5a0-5cff-4ffa-b189-e3f8b69dc845",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/halo",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-05bb5a16-439c-4cd6-a16d-456baa614e78",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/newzealand",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-e55e8db0-94c2-4a1d-aeb1-e1771ee7db6f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/tanonglang",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-05bb5a16-439c-4cd6-a16d-456baa614e78",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/alignmentchartfills",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-05bb5a16-439c-4cd6-a16d-456baa614e78",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/genx",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-05bb5a16-439c-4cd6-a16d-456baa614e78",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/music",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-db7c5aa1-7dd4-40d4-8948-1a1d013e83e6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/vexillology",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-db7c5aa1-7dd4-40d4-8948-1a1d013e83e6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/lowsodiumcyberpunk",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-e55e8db0-94c2-4a1d-aeb1-e1771ee7db6f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/latestagecapitalism",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-e55e8db0-94c2-4a1d-aeb1-e1771ee7db6f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/glowups",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-21-f98e07ac-b7c6-4411-a839-2e1c3e3b8a17",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#ningxiawine",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-10-f98e07ac-b7c6-4411-a839-2e1c3e3b8a17",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#chinesewine",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-71b22c75-9ac5-4798-8838-c8875e260c41",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "zero prosseco",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-71b22c75-9ac5-4798-8838-c8875e260c41",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "non alcoholic",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-10-be4fadb7-a4a2-4713-8f1b-fe2a331c9c01",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/videoediting",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-12-9c30a7a2-df62-4d38-8ebc-8d7fe50c4361",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#costofliving",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-6ecfa77d-5f4a-420a-9d16-afc68e7b2811",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "youtube monetization",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-1a6d2cb5-65a7-4265-9bbe-01cdc8baef74",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "nvidia",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-ca17b7bd-6d9d-4799-9c2f-401834411701",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#nba",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-ca17b7bd-6d9d-4799-9c2f-401834411701",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#lfc",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-1e227729-8452-4123-92ae-8de90e6925e7",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/formula1",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-bbe70391-23fd-457b-9398-7344135f7a5d",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#nacionales",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-3-046107dd-cf22-48a3-b162-2d75fb48fb9c",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "housing crisis",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-f8203229-abf8-467b-a68f-0e874ae4137b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "uk tax reform",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-db7c5aa1-7dd4-40d4-8948-1a1d013e83e6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/rcb",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-db7c5aa1-7dd4-40d4-8948-1a1d013e83e6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/yapms",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-10-30d1426a-d702-4929-b18d-5d0808609e92",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#winetourism",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-b5073d8a-4a3f-478f-86a3-485d6f7e921f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "early prep",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-f1a2b037-232a-4bba-81cc-93c8fab4c3cc",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "nordic sustainability",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-a5199e65-7ce1-4369-bbd7-a96d2a0f393a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "open models",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-13-9c30a7a2-df62-4d38-8ebc-8d7fe50c4361",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#energycrisis",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-687e1566-5c2a-44ed-977c-53a1f6731f5a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "ai agents",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-f137c0a3-6fe3-41ba-8d4a-9dc4395a295f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "ice detention",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-ca17b7bd-6d9d-4799-9c2f-401834411701",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#tellonym",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-ca17b7bd-6d9d-4799-9c2f-401834411701",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#smackdown",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-ca17b7bd-6d9d-4799-9c2f-401834411701",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#urgente",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-db7c5aa1-7dd4-40d4-8948-1a1d013e83e6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/vintagestory",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-bbe70391-23fd-457b-9398-7344135f7a5d",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#onthisday",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-bbe70391-23fd-457b-9398-7344135f7a5d",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#beyondthegates",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-bbe70391-23fd-457b-9398-7344135f7a5d",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#loveislandallstars",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-e55e8db0-94c2-4a1d-aeb1-e1771ee7db6f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/gaybrosgonemild",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-e55e8db0-94c2-4a1d-aeb1-e1771ee7db6f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/winstupidprizes",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-1-b727bb70-54fb-42a9-966e-d59289e7ea15",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "taxonomia",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-15-7dda24dc-6d35-42c2-a560-9254730b389f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "wine pairing",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-27-99acc274-5631-4174-b7ca-6b19f05c6e8b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "apps for wine",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-124f4208-42a0-4398-8246-bd5838c8aa08",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#cricket",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-dc5f9288-bff8-4799-95ca-1821da9b11cc",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "cost of living",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-9-2bca97b1-f6c4-4a29-a829-7ed23d4481e0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#lfc",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-204e2cd8-41c2-476f-a49c-74ac1d8aa266",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/squaredcircle",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-204e2cd8-41c2-476f-a49c-74ac1d8aa266",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/monopoly_go",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-f2202ae2-6189-49d3-8c94-f878b4db339a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#gold",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-f2202ae2-6189-49d3-8c94-f878b4db339a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#\u304a\u306f\u3088\u3046vtuber",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-f2202ae2-6189-49d3-8c94-f878b4db339a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#lacasadealofoke2",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-638da2a9-4511-43c5-a723-90b2fca5d8e6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/laundry",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-638da2a9-4511-43c5-a723-90b2fca5d8e6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/nrl",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-638da2a9-4511-43c5-a723-90b2fca5d8e6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/animemirchi",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-5-f8c18d61-5360-4139-b655-d43081943182",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "season",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-f8c18d61-5360-4139-b655-d43081943182",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#tourism",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-aad5c1f5-9919-4a54-8da9-664f3993fc61",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "energy debate",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-10-b1508b52-8488-48c0-aa1d-eec713fb5cf0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#wellness",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-204e2cd8-41c2-476f-a49c-74ac1d8aa266",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/millennials",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-204e2cd8-41c2-476f-a49c-74ac1d8aa266",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/nbatalk",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-f2202ae2-6189-49d3-8c94-f878b4db339a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#netflix",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-f2202ae2-6189-49d3-8c94-f878b4db339a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#\u0627\u0644\u0646\u0635\u0631",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-6-71b22c75-9ac5-4798-8838-c8875e260c41",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "zero wine",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-10-99acc274-5631-4174-b7ca-6b19f05c6e8b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "oeno",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-124f4208-42a0-4398-8246-bd5838c8aa08",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "player trades",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-681ffe24-9958-4ae8-a420-c5b494338040",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#formula1",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-72b246b8-f356-47bb-9696-d0436fd21f1d",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "water policy",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-204e2cd8-41c2-476f-a49c-74ac1d8aa266",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/hungary",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-1e227729-8452-4123-92ae-8de90e6925e7",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/warframe",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-39c8b495-ef7a-4669-a51a-1d1ae192d39a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#appleevent",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-39c8b495-ef7a-4669-a51a-1d1ae192d39a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#envivo",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-39c8b495-ef7a-4669-a51a-1d1ae192d39a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#afc",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-39c8b495-ef7a-4669-a51a-1d1ae192d39a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#ni_3xl",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-17-7dda24dc-6d35-42c2-a560-9254730b389f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#sommelier",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-9-7dda24dc-6d35-42c2-a560-9254730b389f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "vivino",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-14-7dda24dc-6d35-42c2-a560-9254730b389f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "wine pairing",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-c04af950-998b-4e4c-b704-60df338f4bf0",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "nomad visas",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-a5199e65-7ce1-4369-bbd7-a96d2a0f393a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "ai safety",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-6054873d-6a47-46fd-8c90-889ef7729039",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "commuter reactions",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-f8c18d61-5360-4139-b655-d43081943182",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "turkey tourism",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-daafdb6e-4ce8-4b64-a916-b1ae35891f39",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "manufacturing",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-25-687e1566-5c2a-44ed-977c-53a1f6731f5a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#genai",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-1e227729-8452-4123-92ae-8de90e6925e7",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/advice",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-1e227729-8452-4123-92ae-8de90e6925e7",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/wow",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-1e227729-8452-4123-92ae-8de90e6925e7",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/interesting",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-39c8b495-ef7a-4669-a51a-1d1ae192d39a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#fortnite",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-14-99acc274-5631-4174-b7ca-6b19f05c6e8b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "vinloco",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-7-681ffe24-9958-4ae8-a420-c5b494338040",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#f12025",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-bdc7889c-ceab-4d96-aaf4-92751eb9d8ef",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "royalty",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-4e28281a-3b3c-4b0f-aad2-a180076aef0e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "manufacturing",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-10-24504ca3-eeb7-4127-8ab5-ba8c043c2aac",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "cuomo supporters",
+            "platform": "reddit",
+            "label": "r/democrats",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-19-f137c0a3-6fe3-41ba-8d4a-9dc4395a295f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "us immigration",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-f51161c2-7744-4e83-a8a4-f70afccb89cc",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/kagurabachi",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-5f1f1ed9-e716-431e-8dc9-87b3352fcac1",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/ufc",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-5f1f1ed9-e716-431e-8dc9-87b3352fcac1",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/2007scape",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-5f1f1ed9-e716-431e-8dc9-87b3352fcac1",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/pics",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-f51161c2-7744-4e83-a8a4-f70afccb89cc",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/beelcitosmemes",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-7-5982d35e-0b66-4e54-b5da-3e6887a2c793",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#cocoa",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-35e2244f-b4a1-47fb-b6a4-bb0b46f33fe2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#esg",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-26-f137c0a3-6fe3-41ba-8d4a-9dc4395a295f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/politics",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-f51161c2-7744-4e83-a8a4-f70afccb89cc",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/electricians",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-f51161c2-7744-4e83-a8a4-f70afccb89cc",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/blackops7",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-5f1f1ed9-e716-431e-8dc9-87b3352fcac1",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/publicfreakout",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-48f4a0f7-4106-48ab-ae72-cd56f9041c2b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/pathofexilebuilds",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-48f4a0f7-4106-48ab-ae72-cd56f9041c2b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/kanagawawave",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-48f4a0f7-4106-48ab-ae72-cd56f9041c2b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/texas",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-7-a5199e65-7ce1-4369-bbd7-a96d2a0f393a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#ukai",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-6054873d-6a47-46fd-8c90-889ef7729039",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "pricing",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-49a8759f-6278-4b61-9f5f-034a07335893",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "eu ai",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-a3f1f5af-6c9b-4af8-bc41-9b0f42bb06b7",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#cryptocurrency",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-5f1f1ed9-e716-431e-8dc9-87b3352fcac1",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/jeeneetards",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-1fc69079-59ca-4639-9080-0906f8c49b05",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/chessbeginners",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-bdc7889c-ceab-4d96-aaf4-92751eb9d8ef",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "battery chain",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-6297fc3a-cc3e-4f93-9f0b-42a6841726d2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/damnthatsinteresting",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-1fc69079-59ca-4639-9080-0906f8c49b05",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/saudiforsaudis",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-1fc69079-59ca-4639-9080-0906f8c49b05",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/ontariograde12s",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-1fc69079-59ca-4639-9080-0906f8c49b05",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/redditpregunta",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-6297fc3a-cc3e-4f93-9f0b-42a6841726d2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/whenthe",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-1fc69079-59ca-4639-9080-0906f8c49b05",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/cairo",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-6-6df1ae98-19db-4700-ae3c-98479549a09d",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#taylorswift",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-3ae036ad-adb3-4744-9b78-1a3da2cec950",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "yen volatility",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-1a839568-81ff-4519-8d1e-ea1693d5919e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#mortgagestress",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-7-c6031fbd-f854-4f51-a1b7-e7116781be1c",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#peacetalks",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-42f6b35c-3fc7-4cc8-9e5c-1bf23cbe60a4",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "saudi projects",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-35e2244f-b4a1-47fb-b6a4-bb0b46f33fe2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "indonesia",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-de81abb7-ec6d-4cc0-967d-bd1801b95235",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "glp-1",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-13-49a8759f-6278-4b61-9f5f-034a07335893",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#trustworthyai",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-a3f1f5af-6c9b-4af8-bc41-9b0f42bb06b7",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/crypto",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-6297fc3a-cc3e-4f93-9f0b-42a6841726d2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/askanything",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-6297fc3a-cc3e-4f93-9f0b-42a6841726d2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/tiktokcringe",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-4a3c853a-1477-4716-a356-0f418ab7a826",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/howislivingthere",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-4a3c853a-1477-4716-a356-0f418ab7a826",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/dragonballz",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-05bb5a16-439c-4cd6-a16d-456baa614e78",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/favoritecharacter",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-4a3c853a-1477-4716-a356-0f418ab7a826",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/reclamacoesfuteis",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-10-b8d75576-626e-4f7b-a0b4-4e05bdc3c065",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/environment",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-1a839568-81ff-4519-8d1e-ea1693d5919e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "mortgage",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-6297fc3a-cc3e-4f93-9f0b-42a6841726d2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/baseball",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-4a3c853a-1477-4716-a356-0f418ab7a826",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/minipainting",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-4a3c853a-1477-4716-a356-0f418ab7a826",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/tankiethedeprogram",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-4-24504ca3-eeb7-4127-8ab5-ba8c043c2aac",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#mamdaniformayor",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-3dfa8b84-5c7b-4f55-849d-a8b41f1cf8b6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/nflv2",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-3dfa8b84-5c7b-4f55-849d-a8b41f1cf8b6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/indianteenagers",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-6-5388ef99-40cb-49a3-ae11-f6b0bb860445",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#dubai",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-3dfa8b84-5c7b-4f55-849d-a8b41f1cf8b6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/funny",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-3dfa8b84-5c7b-4f55-849d-a8b41f1cf8b6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/genshin_impact",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-fd81e5a0-5cff-4ffa-b189-e3f8b69dc845",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/explainthisscreen",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-fd81e5a0-5cff-4ffa-b189-e3f8b69dc845",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/battletech",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-fd81e5a0-5cff-4ffa-b189-e3f8b69dc845",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/wkwkwkland",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-e35c206f-6a27-48aa-993f-176de24cbef4",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/askelectricians",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-e35c206f-6a27-48aa-993f-176de24cbef4",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/ai_agents",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-7-7a9fca64-5e9c-418c-a9ed-65063baed9ca",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#pakistancricket",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-3dfa8b84-5c7b-4f55-849d-a8b41f1cf8b6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/jujutsufolk",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-7b5102ff-d935-4ab6-a8be-44c7947767d6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/nextfuckinglevel",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-7b5102ff-d935-4ab6-a8be-44c7947767d6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/anime",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-7-23d0161b-6569-4819-baf8-3a9f9954a8ea",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#exports",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-23d0161b-6569-4819-baf8-3a9f9954a8ea",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "exports",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-fe29c19f-a529-4a7c-a484-821d01354b9e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/deadbydaylight",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-fe29c19f-a529-4a7c-a484-821d01354b9e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/powerscaling",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-e35c206f-6a27-48aa-993f-176de24cbef4",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/buffy",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-fe29c19f-a529-4a7c-a484-821d01354b9e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/popculturechat",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-fe29c19f-a529-4a7c-a484-821d01354b9e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/liverpoolfc",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-fbccc4ec-998a-4ecc-8a60-525a59304afb",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/destinythegame",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-fbccc4ec-998a-4ecc-8a60-525a59304afb",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/veteransbenefits",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-fbccc4ec-998a-4ecc-8a60-525a59304afb",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/ivf",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-fe29c19f-a529-4a7c-a484-821d01354b9e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/overwatch",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-fbccc4ec-998a-4ecc-8a60-525a59304afb",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/imthemaincharacter",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-fbccc4ec-998a-4ecc-8a60-525a59304afb",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/orangecounty",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-455d75c6-dafe-46ce-aedc-1cbbc889fba2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/meirl",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-48f4a0f7-4106-48ab-ae72-cd56f9041c2b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/waterfalldump",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-48f4a0f7-4106-48ab-ae72-cd56f9041c2b",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/destiny2",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-91fd0f42-1521-469c-9ae2-277b2a5fa743",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/sgexams",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-91fd0f42-1521-469c-9ae2-277b2a5fa743",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/no",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-455d75c6-dafe-46ce-aedc-1cbbc889fba2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/unpopularopinion",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-455d75c6-dafe-46ce-aedc-1cbbc889fba2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/christianity",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-91fd0f42-1521-469c-9ae2-277b2a5fa743",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/amiugly",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-91fd0f42-1521-469c-9ae2-277b2a5fa743",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/caguns",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-5-4a2448a0-4f07-4850-b7d9-808a8932ce0d",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "housing uk",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-81c83658-f015-416d-bc41-28b69740a78d",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#concerttickets",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-91fd0f42-1521-469c-9ae2-277b2a5fa743",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/dachshund",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-6-a91c1a1c-e1d2-4073-9617-36406f4e6314",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#winefraud",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-455d75c6-dafe-46ce-aedc-1cbbc889fba2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/mademesmile",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-12-f98e07ac-b7c6-4411-a839-2e1c3e3b8a17",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#englishsparklingwine",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-455d75c6-dafe-46ce-aedc-1cbbc889fba2",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/eldenring",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-b5073d8a-4a3f-478f-86a3-485d6f7e921f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "early prep",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-35bd8d76-6005-4d9c-9c46-c2bf95dd8daf",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "semiconductor",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-b36013db-763b-4956-96bc-dae23ea3f334",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/leagueoflegends",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-b36013db-763b-4956-96bc-dae23ea3f334",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/mapporn",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-b36013db-763b-4956-96bc-dae23ea3f334",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/golf",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-2f07fada-9b32-4b62-b87c-1198d062d5dd",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/trashy",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-fb788974-ae00-4961-82a9-8a2eb1313aee",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/market76",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-2f07fada-9b32-4b62-b87c-1198d062d5dd",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/f1discussions",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-2f07fada-9b32-4b62-b87c-1198d062d5dd",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/achievements",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-5-69a50e9d-653f-43dc-8fce-10567a16a5c4",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "price war",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-5-1a839568-81ff-4519-8d1e-ea1693d5919e",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#ukhousing",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-ef799b93-2ee0-460a-907c-d4ecf69e3f51",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "energy transition",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-42f6b35c-3fc7-4cc8-9e5c-1bf23cbe60a4",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "vision 2030",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-7a9fca64-5e9c-418c-a9ed-65063baed9ca",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "pakistan cricket",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-2f07fada-9b32-4b62-b87c-1198d062d5dd",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/lookismpowerscalers",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-b36013db-763b-4956-96bc-dae23ea3f334",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/fauxmoi",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-9-77696377-fb9f-4767-8b96-e947c71d94c5",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#mentalhealth",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-15-9c30a7a2-df62-4d38-8ebc-8d7fe50c4361",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/middleclassfinance",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-1a6d2cb5-65a7-4265-9bbe-01cdc8baef74",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/nvidia",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-b36013db-763b-4956-96bc-dae23ea3f334",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/conspiracy",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-2f07fada-9b32-4b62-b87c-1198d062d5dd",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/acnh",
+            "post_start_datetime": "2026-03-13T12:10:05",
+            "post_end_datetime": "2026-05-12T12:10:05"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-7b5102ff-d935-4ab6-a8be-44c7947767d6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/countwithchickenlady",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-7b5102ff-d935-4ab6-a8be-44c7947767d6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/videogames",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-7b5102ff-d935-4ab6-a8be-44c7947767d6",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/videos",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-fb788974-ae00-4961-82a9-8a2eb1313aee",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/whitepeopletwitter",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-fb788974-ae00-4961-82a9-8a2eb1313aee",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/deadlockthegame",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-5c22e747-1eb0-4686-92b0-2c2dbd7f2541",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#ai",
+            "post_start_datetime": "2026-03-12T10:23:06",
+            "post_end_datetime": "2026-05-11T10:23:06"
+        }
+    },
+    {
+        "id": "crawler-19-687e1566-5c2a-44ed-977c-53a1f6731f5a",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "openai",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-0-multicrawler-fb788974-ae00-4961-82a9-8a2eb1313aee",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/politicalcompassmemes",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-fb788974-ae00-4961-82a9-8a2eb1313aee",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "reddit",
+            "label": "r/rusaskreddit",
+            "post_start_datetime": "2026-03-12T08:56:22",
+            "post_end_datetime": "2026-05-11T08:56:22"
+        }
+    },
+    {
+        "id": "crawler-2-multicrawler-cb79ba7e-e69c-44e6-bc84-8b1890894026",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#fc26",
+            "post_start_datetime": "2026-03-12T10:17:28",
+            "post_end_datetime": "2026-05-11T10:17:28"
+        }
+    },
+    {
+        "id": "crawler-1-multicrawler-cb79ba7e-e69c-44e6-bc84-8b1890894026",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#erzey",
+            "post_start_datetime": "2026-03-12T10:17:28",
+            "post_end_datetime": "2026-05-11T10:17:28"
+        }
+    },
+    {
+        "id": "crawler-4-multicrawler-cb79ba7e-e69c-44e6-bc84-8b1890894026",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#australia",
+            "post_start_datetime": "2026-03-12T10:17:28",
+            "post_end_datetime": "2026-05-11T10:17:28"
+        }
+    },
+    {
+        "id": "crawler-21-f137c0a3-6fe3-41ba-8d4a-9dc4395a295f",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#dhs",
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-6-de81abb7-ec6d-4cc0-967d-bd1801b95235",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "wegovy",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-8-de81abb7-ec6d-4cc0-967d-bd1801b95235",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "weight loss drug",
+            "platform": "x",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-49a8759f-6278-4b61-9f5f-034a07335893",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": "ai rules",
+            "platform": "reddit",
+            "label": null,
+            "post_start_datetime": "2026-01-31T00:08:46.500333",
+            "post_end_datetime": "2026-05-01T00:08:46.500333"
+        }
+    },
+    {
+        "id": "crawler-3-multicrawler-cb79ba7e-e69c-44e6-bc84-8b1890894026",
+        "weight": 1.0,
+        "max_rows": 2000000,
+        "params": {
+            "keyword": null,
+            "platform": "x",
+            "label": "#rashmer",
+            "post_start_datetime": "2026-03-12T10:17:28",
+            "post_end_datetime": "2026-05-11T10:17:28"
+        }
+    }
+]

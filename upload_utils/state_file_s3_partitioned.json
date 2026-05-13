@@ -1,0 +1,74 @@
+{
+  "crawler-6-687e1566-5c2a-44ed-977c-53a1f6731f5a": {
+    "last_datetime": "2026-05-11T19:41:13+00:00",
+    "last_uri": "https://www.reddit.com/r/Bitcoin/comments/1tae2su/claude_predicts_1525_million_per_bitcoin_in/",
+    "total_records_processed": 11,
+    "last_processed_time": "2026-05-12T23:23:04.429509"
+  },
+  "crawler-1-3ae036ad-adb3-4744-9b78-1a3da2cec950": {
+    "last_datetime": "2026-05-13T08:45:04+00:00",
+    "last_uri": "https://www.reddit.com/r/wallstreetbets/comments/1tbtqx7/sonys_unlimited_ai_potential/",
+    "total_records_processed": 18,
+    "last_processed_time": "2026-05-13T09:23:34.795439"
+  },
+  "crawler-12-687e1566-5c2a-44ed-977c-53a1f6731f5a": {
+    "last_datetime": "2026-05-09T10:43:24+00:00",
+    "last_uri": "https://www.reddit.com/r/wallstreetbets/comments/1t81jj3/akam_the_cdn_boomer_that_just_became_an_ai/",
+    "total_records_processed": 1,
+    "last_processed_time": "2026-05-12T23:23:06.581696"
+  },
+  "crawler-2-687e1566-5c2a-44ed-977c-53a1f6731f5a": {
+    "last_datetime": "2026-05-12T21:05:57+00:00",
+    "last_uri": "https://www.reddit.com/r/Bitcoin/comments/1tberan/im_bullish_af/",
+    "total_records_processed": 27,
+    "last_processed_time": "2026-05-12T23:23:08.290935"
+  },
+  "crawler-5-f8c18d61-5360-4139-b655-d43081943182": {
+    "last_datetime": "2026-05-13T03:00:55+00:00",
+    "last_uri": "https://www.reddit.com/r/wallstreetbets/comments/1tbn88m/openai_expects_over_half_of_all_internet_users/",
+    "total_records_processed": 20,
+    "last_processed_time": "2026-05-13T03:23:23.952616"
+  },
+  "crawler-0-multicrawler-1e227729-8452-4123-92ae-8de90e6925e7": {
+    "last_datetime": "2026-05-08T18:46:40+00:00",
+    "last_uri": "https://www.reddit.com/r/Advice/comments/1t7gw9o/my_friends_was_acting_weird_toward_me_and_now_she/",
+    "total_records_processed": 202,
+    "last_processed_time": "2026-05-12T23:23:10.808557"
+  },
+  "crawler-3-4e28281a-3b3c-4b0f-aad2-a180076aef0e": {
+    "last_datetime": "2026-05-12T21:56:21+00:00",
+    "last_uri": "https://www.reddit.com/r/wallstreetbets/comments/1tbg3a6/the_ai_infrastructure_sleeper_nobodys_pricing/",
+    "total_records_processed": 8,
+    "last_processed_time": "2026-05-12T23:23:11.502675"
+  },
+  "crawler-26-f137c0a3-6fe3-41ba-8d4a-9dc4395a295f": {
+    "last_datetime": "2026-05-11T22:46:02+00:00",
+    "last_uri": "https://www.reddit.com/r/politics/comments/1taj46p/supreme_court_allows_alabama_to_eliminate/",
+    "total_records_processed": 534,
+    "last_processed_time": "2026-05-12T23:23:12.479508"
+  },
+  "crawler-5-6054873d-6a47-46fd-8c90-889ef7729039": {
+    "last_datetime": "2026-05-12T22:50:17+00:00",
+    "last_uri": "https://www.reddit.com/r/CryptoMarkets/comments/1tbhgl8/the_clarity_yield_fight_isnt_actually_the_fight/",
+    "total_records_processed": 41,
+    "last_processed_time": "2026-05-12T23:23:13.257295"
+  },
+  "crawler-3-de81abb7-ec6d-4cc0-967d-bd1801b95235": {
+    "last_datetime": "2026-05-09T04:34:22+00:00",
+    "last_uri": "https://www.reddit.com/r/wallstreetbets/comments/1t7us7u/when_your_calls_are_under_water_grab_a_fatty_they/",
+    "total_records_processed": 1,
+    "last_processed_time": "2026-05-12T23:23:14.030555"
+  },
+  "crawler-2-multicrawler-3dfa8b84-5c7b-4f55-849d-a8b41f1cf8b6": {
+    "last_datetime": "2026-05-08T17:36:52+00:00",
+    "last_uri": "https://www.reddit.com/r/funny/comments/1t7ewsx/not_what_im_called/",
+    "total_records_processed": 20,
+    "last_processed_time": "2026-05-12T23:23:15.041424"
+  },
+  "crawler-3-35bd8d76-6005-4d9c-9c46-c2bf95dd8daf": {
+    "last_datetime": "2026-05-13T00:23:50+00:00",
+    "last_uri": "https://www.reddit.com/r/wallstreetbets/comments/1tbjof2/michael_burry_says_to_reject_greed_and_for_any/",
+    "total_records_processed": 16,
+    "last_processed_time": "2026-05-13T01:23:20.452991"
+  }
+}
